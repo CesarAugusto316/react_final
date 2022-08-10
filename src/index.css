@@ -1,0 +1,125 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap");
+
+:root {
+  font-size: 62.5%;
+  box-sizing: border-box;
+  --font-family: "Poppins", sans-serif;
+  --primary: rgb(100, 108, 255);
+  --primary-focus: rgb(73, 80, 219);
+  --primary-content: rgb(41, 44, 100);
+  --secondary: rgba(97, 218, 251, 0.714);
+  --secondary-focus: rgba(79, 165, 189, 0.871);
+  --accent: rgb(219, 39, 119);
+  --neutral: rgb(48, 48, 53);
+  --neutral-content: rgb(148, 152, 203);
+  --primary-shadow: rgba(100, 108, 255, 0.388);
+}
+
+[data-theme="dark"] {
+  --base-100: rgb(42, 48, 60);
+  --base-150: rgb(36, 41, 51);
+  --base-200: rgb(31, 36, 45);
+  --base-300: rgb(15, 15, 27);
+  --base-content: rgb(166, 173, 186);
+  --base-content-light: rgb(118, 126, 143);
+  --base-shadow: rgba(35, 35, 35, 0.4);
+}
+
+[data-theme="light"] {
+  --base-100: rgb(253, 253, 253);
+  --base-150: rgb(245, 245, 245);
+  --base-200: rgb(235, 235, 235);
+  --base-300: rgb(220, 220, 220);
+  --base-content: rgb(80, 83, 122);
+  --base-content-light: rgb(141, 143, 161);
+  --base-shadow: rgba(160, 164, 173, 0.14);
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+  font-family: var(--font-family);
+  margin: 0;
+  padding: 0;
+  border: none;
+  scroll-behavior: smooth;
+  user-select: none;
+}
+
+#app {
+  position: relative;
+  font-family: var(--font-family);
+  color: var(--base-content);
+  font-size: 1.6rem;
+  background-color: var(--base-150);
+  min-height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  grid-template-rows: auto 1fr;
+}
+
+#app .wave-bottom {
+  height: 40rem;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+}
+
+#app .wave-bottom svg {
+  display: block;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+}
+
+#app .wave-bottom path {
+  width: 100%;
+  height: 110%;
+  fill: url("#linear");
+}
+
+::-webkit-scrollbar {
+  appearance: none;
+  width: 14px;
+  background-color: var(--base-300);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--primary);
+  display: block;
+  min-height: 40px;
+  border-radius: 10rem;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--primary-shadow);
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+*:focus {
+  outline: none;
+  /* outline: 2px solid var(--primary);
+  box-shadow: 0px 0px 10px 2px var(--primary-shadow); */
+}
+
+@media screen and (max-width: 900px) {
+  :root {
+    font-size: 59%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  :root {
+    font-size: 56%;
+  }
+}

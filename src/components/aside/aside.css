@@ -1,0 +1,35 @@
+.aside {
+  width: 30rem;
+  height: 100%;
+  background-color: var(--base-200);
+  padding: 2rem;
+}
+
+.todos-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.todos-list__heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.todos-list__heading--main {
+  font-size: 2.8rem;
+}
+
+.todos-list__heading--subtitle {
+  color: var(--primary);
+  font-weight: 600;
+  font-size: 1.8rem;
+}
+
+.todo {
+  background-color: var(--base-150);
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0px 0px 12px 2px var(--base-shadow);
+}
