@@ -1,41 +1,43 @@
 import { AxiosError } from 'axios';
 import { RestAPI } from './RestApi';
-import { Todo } from '../interfaces';
+import { UserPayload, UserProfile, Token } from '../interfaces';
 
 
 /**
  *
  * @description Singleton
  */
-export class TodosService extends RestAPI {
-  private static instance: TodosService;
+export class AuthService extends RestAPI {
+  private static instance: AuthService;
 
   private constructor() {
     super();
   }
 
   public static getInstance() {
-    if (!TodosService.instance) {
-      TodosService.instance = new TodosService();
+    if (!AuthService.instance) {
+      AuthService.instance = new AuthService();
     }
-    return TodosService.instance;
+    return AuthService.instance;
   }
 
-  public getAll(queryParams: string): Promise<Todo[]> {
+  public fetchToken(payload: UserPayload): Promise<Token> {
     return new Promise((resolve, reject) => {
-      this.get(`/todos${queryParams}`, false)
+      this.post('/auth/login', payload, false)
         .then(({ data }) => {
+          this.saveLocalToken(data.token);
           resolve(data);
         })
         .catch((error: AxiosError) => {
+          this.deleteLocalToken();
           reject(error);
         });
     });
   }
 
-  public create(payload: Todo): Promise<Todo> {
+  public fetchUserProfile(): Promise<UserProfile> {
     return new Promise((resolve, reject) => {
-      this.post('/todos/', payload, true)
+      this.get('/auth/check')
         .then(({ data }) => {
           resolve(data);
         })

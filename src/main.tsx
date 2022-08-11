@@ -6,16 +6,17 @@ import { App } from './App';
 import './index.css';
 
 
+
 ReactDOM
   .createRoot(document.getElementById('root') as HTMLElement)
   .render(
-    <React.StrictMode>
-      <ThemeProvider>
-        <TodosProvider>
-          <BrowserRouter>
-            <App />
-          </BrowserRouter>
-        </TodosProvider>
-      </ThemeProvider>
-    </React.StrictMode>,
+    // <React.StrictMode>
+    <ThemeProvider>
+      <TodosProvider>
+        <BrowserRouter>
+          <App />
+        </BrowserRouter>
+      </TodosProvider>
+    </ThemeProvider>,
+    // </React.StrictMode>,
   );

@@ -1,6 +1,6 @@
 /**
  *
- * @description {SingleTon} Since we could have many classes that inherit from
+ * @description {Singleton} Since we could have many classes that inherit from
  * RestAPI, we will be reading many times from localStorage the same value.
  * So we have only one instance that holds that value which is a synchronous
  * operation.

@@ -10,7 +10,7 @@ import { LocalToken } from './LocalToken';
 export class RestAPI {
   private baseUrl = import.meta.env.VITE_TODOS_API_URL;
 
-  public setLocalToken(newToken: string) {
+  public saveLocalToken(newToken: string) {
     LocalToken.getInstance().setValue(newToken);
   }
 

@@ -15,6 +15,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-bottom: 2rem;
 }
 
 .todos-list__heading--main {
@@ -22,12 +23,20 @@
 }
 
 .todos-list__heading--subtitle {
+  cursor: pointer;
   color: var(--primary);
   font-weight: 600;
   font-size: 1.8rem;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.todos-list__heading--subtitle:hover {
+  transform: scale(1.1);
 }
 
 .todo {
+  position: relative;
+  z-index: 1;
   background-color: var(--base-150);
   padding: 2rem;
   border-radius: 1rem;
