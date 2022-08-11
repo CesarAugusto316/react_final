@@ -40,7 +40,7 @@ export const Dashboard: FC = () => {
         <figure className="hero__image-box bounce-bottom">
           <img
             src={astronaut}
-            className="hero__image"
+            className="hero__image fade-in-bottom"
             alt="hero-astronaut"
           />
         </figure>
