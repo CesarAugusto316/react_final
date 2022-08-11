@@ -2,6 +2,7 @@ import {
   createContext, FC, ReactNode, ReducerWithoutAction, useContext, useMemo,
   useReducer, useEffect,
 } from 'react';
+import mySvg from '../assets/waves.svg';
 
 
 type Theme = 'light' | 'dark'
