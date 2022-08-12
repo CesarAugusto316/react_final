@@ -2,7 +2,6 @@ import {
   createContext, FC, ReactNode, ReducerWithoutAction, useContext, useMemo,
   useReducer, useEffect,
 } from 'react';
-import mySvg from '../assets/waves.svg';
 
 
 type Theme = 'light' | 'dark'
@@ -70,7 +69,7 @@ export const ThemeProvider: FC<{children: ReactNode}> = ({ children }) => {
               <stop offset="100%" stopColor="rgb(73, 80, 219)" />
             </linearGradient>
             <path
-              fillOpacity="0.15"
+              fillOpacity="0.12"
               d="M0,224L48,240C96,256,192,288,288,272C384,256,480,192,576,154.7C672,117,768,107,864,122.7C960,139,1056,181,1152,165.3C1248,149,1344,75,1392,37.3L1440,0L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
             />
             <svg className="wave-lighter" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
