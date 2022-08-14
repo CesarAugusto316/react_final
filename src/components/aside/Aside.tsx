@@ -25,7 +25,7 @@ export const Aside: FC = () => {
   };
 
   const closeModal: MouseEventHandler = (e) => {
-    if (!(e.target as HTMLElement).closest('.form')) {
+    if (!(e.target as HTMLElement).closest('.form-login')) {
       setToggleModal(false);
     }
   };
@@ -44,7 +44,7 @@ export const Aside: FC = () => {
           <span className="todos-list__heading--main">ToDos</span>
           {toggleModal && (
           <Modal onClick={closeModal}>
-            <LoginForm />
+            <LoginForm onCloseModal={() => setToggleModal(false)} />
           </Modal>
           )}
           <span

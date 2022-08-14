@@ -12,12 +12,12 @@ export const Modal: FC<ModalProps> = ({ children, onClick }) => {
   return (
     createPortal(
       <div
-        className="backdrop slide-in-elliptic--entrance"
+        className="backdrop"
         onClick={onClick}
       >
         {children}
       </div>,
-      (document.querySelector('#app') as HTMLElement),
+      (document.querySelector('#portal') as HTMLElement),
     )
   );
 };

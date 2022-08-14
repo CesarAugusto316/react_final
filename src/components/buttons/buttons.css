@@ -1,0 +1,22 @@
+.btn {
+  cursor: pointer;
+  display: block;
+  width: 100%;
+  background-color: var(--primary);
+  padding: 1.4rem 0rem;
+  border-radius: 20rem;
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  font-weight: 800;
+  color: var(--primary-content);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.btn:hover {
+  transform: scale(1.075) translateY(-2px);
+  background-color: var(--primary-focus);
+}
+
+.btn:active {
+  transform: scale(1) translateY(1px);
+}

@@ -1,20 +1,20 @@
 import { AxiosError } from 'axios';
 import {
-  createContext, FC, ReactNode, useContext, useMemo, useState,
+  createContext, FC, ReactNode, useContext, useEffect, useMemo, useState,
 } from 'react';
 import { UserPayload } from '../interfaces';
 import { AuthService } from '../services/AuthService';
 
 
-interface AuthProviderProps {
+interface AuthContext {
   isLoading: boolean,
   error: string,
   isLogged: boolean,
-  signIn: (userInput: UserPayload) => void,
-  signOut: () => void
+  signIn: (userInput: UserPayload) => Promise<void>,
+  signOut: () => Promise<void>
 }
 
-const Context = createContext({} as AuthProviderProps);
+const Context = createContext({} as AuthContext);
 export const useAuthContext = () => {
   return useContext(Context);
 };
@@ -22,35 +22,52 @@ export const useAuthContext = () => {
 const authService = AuthService.getInstance();
 
 export const AuthProvider: FC<{children: ReactNode}> = ({ children }) => {
+  const [isLoading, setIsloading] = useState(false);
   const [isLogged, setIsLogged] = useState(false);
-  const [isLoading, setIsloading] = useState(true);
+  const [hasToken, setHasToken] = useState(false);
   const [error, setError] = useState('');
 
-  const signIn = (userInput: UserPayload): void => {
-    // can i invoke setIsloading() here ?
-    authService.fetchToken(userInput)
-      .then(({ token }) => {
-        console.log(token);
-        setIsLogged(true);
-        setIsloading(false);
+  const signIn = async (userInput: UserPayload): Promise<void> => {
+    setIsloading(true);
+
+    return authService.fetchToken(userInput)
+      .then(() => {
+        setHasToken(true);
       })
       .catch((error: AxiosError) => {
         setError(error.message);
-        console.log(error);
+      })
+      .finally(() => {
+        setIsloading(false);
       });
   };
 
   const fetchNewUserProfile = () => {
+    setIsloading(true);
+
     authService.fetchUserProfile()
       .then((user) => {
         console.log(user);
+        setIsLogged(true);
       })
-      .catch((error) => {
+      .catch((error: AxiosError) => {
+        setError(error.message);
         console.log(error);
+      })
+      .finally(() => {
+        setIsloading(false);
       });
   };
 
-  const signOut = (): void => {
+  useEffect(() => {
+    console.log('is Logged:', isLogged);
+    console.log('hasToken:', hasToken);
+    if (hasToken) {
+      fetchNewUserProfile();
+    }
+  }, [hasToken]);
+
+  const signOut = async (): Promise<void> => {
 
   };
 
@@ -58,7 +75,7 @@ export const AuthProvider: FC<{children: ReactNode}> = ({ children }) => {
     return {
       isLogged, signIn, signOut, isLoading, error,
     };
-  }, [isLogged, error]);
+  }, [isLogged, error, isLoading]);
 
 
   return (

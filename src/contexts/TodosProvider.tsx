@@ -6,7 +6,7 @@ import { TodosService } from '../services';
 import { Todo } from '../interfaces';
 
 
-interface TodosProviderHooks {
+interface TodosContext {
   useGetTodos: (email: string) => {
     isLoading: boolean,
     todos: Array<Todo>,
@@ -18,18 +18,15 @@ interface TodosProviderHooks {
     error: string,
     createTodo:(todoInput: Todo) => void
   }
-  // todos: Array<Todo>,
-  // isLoading: boolean,
 }
 
-const Context = createContext({} as TodosProviderHooks);
+const Context = createContext({} as TodosContext);
 
 export const useTodosContext = () => {
   return useContext(Context);
 };
 
 const todosService = TodosService.getInstance();
-
 
 const useGetTodos = (email: string) => {
   const [isLoading, setIsLoading] = useState(true);
@@ -63,6 +60,10 @@ const useCreateTodo = () => {
   const [error, setError] = useState('');
   const [todo, setTodo] = useState({} as Todo);
 
+  /**
+   *
+   * @description requires Auth
+   */
   const createTodo = (todoInput: Todo) => {
     todosService.create(todoInput)
       .then((todo) => {
@@ -87,21 +88,6 @@ const useCreateTodo = () => {
 };
 
 export const TodosProvider: FC<{children: ReactNode}> = ({ children }) => {
-  // const [isLoading, setIsloading] = useState(true);
-
-  // useEffect(() => {
-  //   todosService.getAll('?email=riveramirandac@gmail.com')
-  //     .then((todos) => {
-  //       setTodos(todos);
-  //     })
-  //     .catch((error) => {
-  //       console.log(error.message);
-  //     })
-  //     .finally(() => {
-  //       setIsloading(false);
-  //     });
-  // }, []);
-
   const memoizedValues = useMemo(() => {
     return { useGetTodos, useCreateTodo };
   }, [useGetTodos, useCreateTodo]);

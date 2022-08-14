@@ -15,6 +15,8 @@
   "plugins": ["react", "@typescript-eslint"],
   "rules": {
     "no-empty-function":"off",
+    "react/button-has-type": "off",
+    "react/jsx-props-no-spreading": "off",
     "no-useless-constructor":"off",
     "no-use-before-define":"off",
     "jsx-a11y/no-static-element-interactions": "off",

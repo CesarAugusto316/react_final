@@ -33,6 +33,10 @@ export class TodosService extends RestAPI {
     });
   }
 
+  /**
+   *
+   * @description requires Auth
+   */
   public create(payload: Todo): Promise<Todo> {
     return new Promise((resolve, reject) => {
       this.post('/todos/', payload, true)

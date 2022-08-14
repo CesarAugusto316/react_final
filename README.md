@@ -5,11 +5,11 @@
 <br>
 React Final Project
 
-- Singleton design pattern used for the services.
+- Vanilla css for styling, dark-theme, using LocalStorage.
+- Authentication using JWT with React and Typescript.
+- Formik, Form and Custom Input component.
 - Refactored light-dark Mode.
-- Authentication using JWT with React and Typescript,
-- Vanilla css for styling, dark-theme, using a
-- Formik and more.
+- Singleton design pattern used for services.
 
 <br>
 npm install & npm run dev

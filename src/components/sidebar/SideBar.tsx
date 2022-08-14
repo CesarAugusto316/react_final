@@ -24,7 +24,7 @@ export const SideBar: FC = () => {
   }, [toggle]);
 
   return (
-    <nav className={`sidebar ${toggle ? 'shrink' : ''}`}>
+    <nav className={`sidebar ${toggle ? 'expand' : ''}`}>
 
       <div className="sidebar__links">
         <figure className="personal-logo">
@@ -61,8 +61,8 @@ export const SideBar: FC = () => {
         onClick={() => setToggle()}
         className="btn--sidebar__toggle"
       >
-        {!toggle && <BsBoxArrowLeft className="sidebar__expand-icon" title="expand or shrink" />}
-        {toggle && <BsBoxArrowRight className="sidebar__expand-icon" title="expand or shrink" />}
+        {!toggle && <BsBoxArrowLeft className="sidebar__expand-icon" title="shrink" />}
+        {toggle && <BsBoxArrowRight className="sidebar__expand-icon" title="expand" />}
       </span>
     </nav>
   );

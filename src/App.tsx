@@ -1,6 +1,8 @@
 import { FC } from 'react';
 import { Routes, Route } from 'react-router-dom';
-import { SideBar, Aside, Navbar } from './components';
+import {
+  SideBar, Aside, Navbar, Layout,
+} from './components';
 import {
   Dashboard, Skills, References, Projects, ContactForm,
 } from './pages';
@@ -8,7 +10,7 @@ import {
 
 export const App: FC = () => {
   return (
-    <>
+    <Layout>
       <SideBar />
       <Navbar />
 
@@ -21,6 +23,6 @@ export const App: FC = () => {
       </Routes>
 
       <Aside />
-    </>
+    </Layout>
   );
 };
