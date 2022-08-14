@@ -5,9 +5,9 @@
 <br>
 React Final Project
 
+- Formik, Form and Custom Input component & Yup schema validations.
 - Vanilla css for styling, dark-theme, using LocalStorage.
 - Authentication using JWT with React and Typescript.
-- Formik, Form and Custom Input component.
 - Refactored light-dark Mode.
 - Singleton design pattern used for services.
 

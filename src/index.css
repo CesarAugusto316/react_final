@@ -54,14 +54,14 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: var(--primary);
+  background-color: var(--primary-shadow);
   display: block;
   min-height: 40px;
   border-radius: 10rem;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background-color: var(--primary-shadow);
+  background-color: var(--primary);
 }
 
 ul {
