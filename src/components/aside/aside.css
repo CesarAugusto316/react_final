@@ -3,6 +3,8 @@
   height: 100%;
   background-color: var(--base-200);
   padding: 2rem;
+  display: flex;
+  flex-direction: column;
 }
 
 .todos-list {
@@ -12,6 +14,7 @@
 }
 
 .todos-list__heading {
+  height: auto;
   display: flex;
   align-items: center;
   justify-content: space-between;

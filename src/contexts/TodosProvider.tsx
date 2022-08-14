@@ -7,7 +7,7 @@ import { Todo } from '../interfaces';
 
 
 interface TodosContext {
-  useGetTodos: (email: string) => {
+  useGetTodos: () => {
     isLoading: boolean,
     todos: Array<Todo>,
     error: string
@@ -28,13 +28,13 @@ export const useTodosContext = () => {
 
 const todosService = TodosService.getInstance();
 
-const useGetTodos = (email: string) => {
+const useGetTodos = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [todos, setTodos] = useState([] as Array<Todo>);
   const [error, setError] = useState('');
 
   useEffect(() => {
-    todosService.getAll(email)
+    todosService.getAll('?email=riveramirandac@gmail.com')
       .then((todos) => {
         setTodos(todos);
         console.log(todos);
@@ -56,7 +56,7 @@ const useGetTodos = (email: string) => {
 };
 
 const useCreateTodo = () => {
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState('');
   const [todo, setTodo] = useState({} as Todo);
 
@@ -65,6 +65,8 @@ const useCreateTodo = () => {
    * @description requires Auth
    */
   const createTodo = (todoInput: Todo) => {
+    setIsLoading(true);
+
     todosService.create(todoInput)
       .then((todo) => {
         setTodo(todo);
@@ -82,7 +84,7 @@ const useCreateTodo = () => {
     return {
       isLoading, todo, error, createTodo,
     };
-  }, [todo]);
+  }, [todo, error]);
 
   return memoizedValues;
 };

@@ -1,9 +1,11 @@
-import { FC } from 'react';
+import { FC, useEffect } from 'react';
 import { Form, Formik } from 'formik';
 import * as Yup from 'yup';
 import { UserPayload } from '../../interfaces';
 import { useAuthContext } from '../../contexts';
-import { MyInput, Button, Spinner } from '..';
+import {
+  MyInput, Button, Spinner, CreateTodoForm,
+} from '..';
 import './loginForm.css';
 
 
@@ -18,22 +20,27 @@ const validationSchema = Yup.object({
   email: Yup.string().email('Invalid email address').required('Required'),
 });
 
+interface LoginFormProps {
+  onCloseModal: () => void
+}
+
 /**
  *
  * discordID: 890827972238528572
  * @description Formik Form
  */
-export const LoginForm: FC<{onCloseModal: () => void}> = ({ onCloseModal }) => {
+export const LoginForm: FC<LoginFormProps> = ({ onCloseModal }) => {
   const { isLoading, isLogged, signIn } = useAuthContext();
 
+
+  useEffect(() => {
+    console.log('isLogged:', isLogged);
+  }, [isLogged]);
 
   if (isLoading) {
     return <Spinner size="font-6" />;
   }
-  if (isLogged) {
-    // then we should show the createTodo Form
-    return <h1>You are Logged In</h1>;
-  } return (
+  return (
     <Formik
       initialValues={initialValues}
       validationSchema={validationSchema}
@@ -42,7 +49,7 @@ export const LoginForm: FC<{onCloseModal: () => void}> = ({ onCloseModal }) => {
         resetForm();
         try {
           await signIn(values);
-          onCloseModal();
+          // onCloseModal();
         } catch (error) {
           console.log(error);
         }

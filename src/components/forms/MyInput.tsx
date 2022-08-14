@@ -6,13 +6,13 @@ import './myInput.css';
 interface MyInputProps {
   type: string,
   placeholder: string,
-  name?: string,
+  name: string,
 }
 
 export const MyInput: FC<MyInputProps> = ({ type, placeholder, name }) => {
   return (
     <div className="form__label">
-      <ErrorMessage name={name || type} className="form__error-msg" component="div" />
+      <ErrorMessage name={name} className="form__error-msg" component="div" />
       <Field name={name}>
         {({ field, meta }: FieldProps) => (
           <input
@@ -26,8 +26,4 @@ export const MyInput: FC<MyInputProps> = ({ type, placeholder, name }) => {
       </Field>
     </div>
   );
-};
-
-MyInput.defaultProps = {
-  name: '',
 };

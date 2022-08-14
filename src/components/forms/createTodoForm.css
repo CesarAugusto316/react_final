@@ -1,0 +1,16 @@
+.create-todo-form {
+  width: 46rem;
+  background-color: var(--base-100);
+  box-shadow: 0px 0px 14px var(--base-shadow);
+  border-radius: 1rem;
+  padding: 3.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3.4rem;
+}
+
+.create-todo-form__heading {
+  color: var(--primary-focus);
+  text-align: center;
+  font-size: 2.8rem;
+}

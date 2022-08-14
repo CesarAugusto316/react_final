@@ -21,24 +21,26 @@ export const useAuthContext = () => {
 
 const authService = AuthService.getInstance();
 
+/**
+ *
+ * @TODO: hasToken should get its value from localStorage as well.
+ */
 export const AuthProvider: FC<{children: ReactNode}> = ({ children }) => {
   const [isLoading, setIsloading] = useState(false);
+  const [hasToken, setHasToken] = useState(false); // localStorage as well
   const [isLogged, setIsLogged] = useState(false);
-  const [hasToken, setHasToken] = useState(false);
   const [error, setError] = useState('');
 
   const signIn = async (userInput: UserPayload): Promise<void> => {
     setIsloading(true);
 
     return authService.fetchToken(userInput)
-      .then(() => {
+      .then((token) => {
+        console.log('hasToken: 😀', true, token);
         setHasToken(true);
       })
       .catch((error: AxiosError) => {
         setError(error.message);
-      })
-      .finally(() => {
-        setIsloading(false);
       });
   };
 
@@ -47,7 +49,7 @@ export const AuthProvider: FC<{children: ReactNode}> = ({ children }) => {
 
     authService.fetchUserProfile()
       .then((user) => {
-        console.log(user);
+        console.log('is Logged 😀!', true, user);
         setIsLogged(true);
       })
       .catch((error: AxiosError) => {
@@ -60,8 +62,6 @@ export const AuthProvider: FC<{children: ReactNode}> = ({ children }) => {
   };
 
   useEffect(() => {
-    console.log('is Logged:', isLogged);
-    console.log('hasToken:', hasToken);
     if (hasToken) {
       fetchNewUserProfile();
     }
