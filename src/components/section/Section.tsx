@@ -1,8 +1,11 @@
-import { FC } from 'react';
+import { FC, ReactNode } from 'react';
+import './section.css';
 
 
-export const Section: FC = () => {
+export const Section: FC<{children: ReactNode}> = ({ children }) => {
   return (
-    <div />
+    <section className="section">
+      {children}
+    </section>
   );
 };

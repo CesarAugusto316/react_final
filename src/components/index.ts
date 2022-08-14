@@ -1,8 +1,10 @@
+export { Layout } from './layout/Layout';
+export { Navbar } from './navbar/Navbar';
 export { SideBar } from './sidebar/SideBar';
 export { Aside } from './aside/Aside';
-export { Navbar } from './navbar/Navbar';
+export { Section } from './section/Section';
+export { Spinner } from './spinner/Spinner';
 export { Modal } from './modal/Modal';
 export { LoginForm } from './forms/LoginForm';
-export { Button } from './buttons/Button';
 export { MyInput } from './forms/MyInput';
-export { Layout } from './layout/Layout';
+export { Button } from './buttons/Button';

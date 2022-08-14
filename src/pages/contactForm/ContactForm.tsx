@@ -1,7 +1,8 @@
 import { FC } from 'react';
 import { Formik, Form } from 'formik';
 import * as Yup from 'yup';
-import { MyInput } from '../../components';
+import { MyInput, Section } from '../../components';
+import './contactForm.css';
 
 
 interface InitialValues {
@@ -19,7 +20,7 @@ const validationSchema = Yup.object({
 
 export const ContactForm: FC = () => {
   return (
-    <section>
+    <Section>
       <Formik
         initialValues={initialValues}
         validationSchema={validationSchema}
@@ -29,13 +30,13 @@ export const ContactForm: FC = () => {
           setSubmitting(false);
         }}
       >
-        <Form className="form">
-          <h2 className="form__heading">Contact Form</h2>
+        <Form className="form-contact">
+          <h2 className="form-contact__heading">Contact Form</h2>
           <MyInput placeholder="Name" type="text" name="name" />
           <MyInput placeholder="Email" type="email" name="email" />
           <button className="btn" type="submit">Submit</button>
         </Form>
       </Formik>
-    </section>
+    </Section>
   );
 };

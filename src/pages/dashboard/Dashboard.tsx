@@ -1,6 +1,7 @@
 import { FC } from 'react';
 import Typewriter from 'typewriter-effect';
 import astronaut from '../../assets/astronaut.svg';
+import { Section } from '../../components';
 import './dashboard.css';
 
 const typewriterList = [
@@ -14,7 +15,7 @@ const typewriterList = [
 
 export const Dashboard: FC = () => {
   return (
-    <section className="dashboard">
+    <Section>
       <div className="hero-section">
         <div className="hero__content">
           <h3 className="hero__heading">
@@ -45,6 +46,6 @@ export const Dashboard: FC = () => {
           />
         </figure>
       </div>
-    </section>
+    </Section>
   );
 };

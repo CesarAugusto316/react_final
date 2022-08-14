@@ -3,7 +3,7 @@ import { Form, Formik } from 'formik';
 import * as Yup from 'yup';
 import { UserPayload } from '../../interfaces';
 import { useAuthContext } from '../../contexts';
-import { MyInput, Button } from '..';
+import { MyInput, Button, Spinner } from '..';
 import './loginForm.css';
 
 
@@ -28,7 +28,7 @@ export const LoginForm: FC<{onCloseModal: () => void}> = ({ onCloseModal }) => {
 
 
   if (isLoading) {
-    return <h1>is loading...</h1>;
+    return <Spinner size="font-6" />;
   }
   if (isLogged) {
     // then we should show the createTodo Form

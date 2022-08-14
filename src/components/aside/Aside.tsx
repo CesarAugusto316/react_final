@@ -4,7 +4,7 @@ import {
 import '@animxyz/core';
 import { XyzTransitionGroup } from '@animxyz/react';
 import { useTodosContext } from '../../contexts';
-import { Modal, LoginForm } from '..';
+import { Modal, LoginForm, Spinner } from '..';
 import './aside.css';
 
 
@@ -32,7 +32,11 @@ export const Aside: FC = () => {
 
 
   if (isLoading) {
-    return <div className="aside">Is loading... </div>;
+    return (
+      <div className="aside">
+        <Spinner size="font-5" />
+      </div>
+    );
   }
   if (error) {
     return <div className="aside">{error}</div>;
