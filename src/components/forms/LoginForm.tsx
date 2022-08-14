@@ -3,9 +3,7 @@ import { Form, Formik } from 'formik';
 import * as Yup from 'yup';
 import { UserPayload } from '../../interfaces';
 import { useAuthContext } from '../../contexts';
-import {
-  MyInput, Button, Spinner, CreateTodoForm,
-} from '..';
+import { MyInput, Button, Spinner } from '..';
 import './loginForm.css';
 
 
@@ -20,25 +18,24 @@ const validationSchema = Yup.object({
   email: Yup.string().email('Invalid email address').required('Required'),
 });
 
-interface LoginFormProps {
-  onCloseModal: () => void
-}
-
 /**
  *
  * discordID: 890827972238528572
+ * email: riveramirandac@gmail.com
+ *
  * @description Formik Form
  */
-export const LoginForm: FC<LoginFormProps> = ({ onCloseModal }) => {
-  const { isLoading, isLogged, signIn } = useAuthContext();
+export const LoginForm: FC = () => {
+  const {
+    isLoading, error, signIn,
+  } = useAuthContext();
 
-
-  useEffect(() => {
-    console.log('isLogged:', isLogged);
-  }, [isLogged]);
 
   if (isLoading) {
     return <Spinner size="font-6" />;
+  }
+  if (error) {
+    return <div>{error}</div>;
   }
   return (
     <Formik
@@ -49,14 +46,13 @@ export const LoginForm: FC<LoginFormProps> = ({ onCloseModal }) => {
         resetForm();
         try {
           await signIn(values);
-          // onCloseModal();
         } catch (error) {
           console.log(error);
         }
         setSubmitting(false);
       }}
     >
-      <Form className="form-login">
+      <Form className="form-login slide-in-elliptic--entrance ">
         <h2 className="form-login__heading">Sign In</h2>
         <MyInput type="text" placeholder="DiscordId" name="discordId" />
         <MyInput type="email" placeholder="Email" name="email" />

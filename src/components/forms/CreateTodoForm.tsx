@@ -34,7 +34,7 @@ export const CreateTodoForm: FC<TodoFormProps> = ({ onCloseModal }) => {
         setSubmitting(false);
       }}
     >
-      <Form className="create-todo-form">
+      <Form className="create-todo-form slide-in-elliptic--entrance ">
         <h2 className="create-todo-form__heading">Create a ToDo</h2>
         <MyInput type="text" name="name" placeholder="Name" />
         <MyInput type="text" name="description" placeholder="Description" />

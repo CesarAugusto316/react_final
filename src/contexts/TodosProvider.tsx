@@ -69,6 +69,7 @@ const useCreateTodo = () => {
 
     todosService.create(todoInput)
       .then((todo) => {
+        console.log('New Todo created!');
         setTodo(todo);
       })
       .catch((error: AxiosError) => {
