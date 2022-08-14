@@ -38,5 +38,5 @@
 
 .navbar__icon:hover {
   transform: scale(1.125);
-  color: var(--primary);
+  color: var(--primary-focus);
 }

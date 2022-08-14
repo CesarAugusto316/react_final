@@ -4,7 +4,7 @@
   color: var(--base-content);
   font-size: 1.6rem;
   background-color: var(--base-150);
-  min-height: 100vh;
+  height: 100vh;
   width: 100vw;
   overflow: hidden;
   display: grid;

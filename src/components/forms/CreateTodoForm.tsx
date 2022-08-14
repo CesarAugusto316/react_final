@@ -1,5 +1,6 @@
 import { FC } from 'react';
 import { Formik, Form } from 'formik';
+import Typewriter from 'typewriter-effect';
 import * as Yup from 'yup';
 import { MyInput, Button } from '..';
 import { useTodosContext } from '../../contexts';
@@ -35,7 +36,17 @@ export const CreateTodoForm: FC<TodoFormProps> = ({ onCloseModal }) => {
       }}
     >
       <Form className="create-todo-form slide-in-elliptic--entrance ">
-        <h2 className="create-todo-form__heading">Create a ToDo</h2>
+        <h2 className="create-todo-form__heading">
+          <Typewriter
+            options={{ loop: true }}
+            onInit={(typewriter) => {
+              typewriter.typeString('Create a ToDo')
+                .pauseFor(5_000)
+                .deleteAll()
+                .start();
+            }}
+          />
+        </h2>
         <MyInput type="text" name="name" placeholder="Name" />
         <MyInput type="text" name="description" placeholder="Description" />
         <Button type="submit">Create Todo</Button>
