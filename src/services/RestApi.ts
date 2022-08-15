@@ -43,9 +43,9 @@ export class RestAPI {
       .post(this.baseUrl + url, data, this.configHeaders(auth));
   }
 
-  protected put(url: string, auth = true): Promise<AxiosResponse> {
+  protected put(url: string, data: object, auth = true): Promise<AxiosResponse> {
     return axios
-      .put(this.baseUrl + url, this.configHeaders(auth));
+      .put(this.baseUrl + url, data, this.configHeaders(auth));
   }
 
   protected delete(url: string, auth = true): Promise<AxiosResponse> {

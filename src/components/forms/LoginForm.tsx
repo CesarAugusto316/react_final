@@ -54,7 +54,7 @@ export const LoginForm: FC = () => {
     >
       <Form className="form-login slide-in-elliptic--entrance ">
         <h2 className="form-login__heading">Sign In</h2>
-        <MyInput type="text" placeholder="DiscordId" name="discordId" />
+        <MyInput type="text" placeholder="Discord ID" name="discordId" />
         <MyInput type="email" placeholder="Email" name="email" />
         <Button type="submit">Submit</Button>
       </Form>

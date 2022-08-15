@@ -13,10 +13,7 @@ interface TodoFormProps {
 }
 
 export const CreateTodoForm: FC<TodoFormProps> = ({ onCloseModal }) => {
-  const { useCreateTodo } = useTodosContext();
-  const {
-    createTodo, isLoading, todo, error,
-  } = useCreateTodo();
+  const { createTodo } = useTodosContext();
 
   return (
     <Formik

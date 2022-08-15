@@ -1,6 +1,6 @@
 .aside {
   max-height: max-content;
-  width: 30rem;
+  width: 33rem;
   background-color: var(--base-200);
   display: flex;
   flex-direction: column;
@@ -32,9 +32,12 @@
 
 .todos-list::-webkit-scrollbar-thumb {
   background-color: var(--primary-shadow);
-  display: block;
-  min-height: 40px;
+  height: 30px;
   border-radius: 10rem;
+}
+
+.todos-list::-webkit-scrollbar-button {
+  height: 50px;
 }
 
 .todos-list::-webkit-scrollbar-thumb:hover {

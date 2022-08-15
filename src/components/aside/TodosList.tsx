@@ -8,8 +8,9 @@ import './aside.css';
 
 
 export const TodosList: FC = () => {
-  const { useGetTodos } = useTodosContext();
-  const { isLoading, todos, error } = useGetTodos();
+  const {
+    todos, isLoading, error, deleteTodo,
+  } = useTodosContext();
 
 
   if (isLoading) {
@@ -26,7 +27,8 @@ export const TodosList: FC = () => {
       xyz="fade big up appear-stagger ease-in-out-back delay-5"
       className="todos-list"
     >
-      {todos.map(({ id, name, description }) => {
+      {!todos.length && <p>There are no Todos by now.</p>}
+      {todos.length && todos.map(({ id, name, description }) => {
         return (
           <div key={id} className="todo">
             <div className="todo__content">
@@ -36,7 +38,7 @@ export const TodosList: FC = () => {
 
             <div className="todo__actions">
               <FaEdit className="todo__icon" />
-              <FaTrashAlt className="todo__icon" />
+              <FaTrashAlt className="todo__icon" onClick={() => deleteTodo(id)} />
             </div>
           </div>
         );

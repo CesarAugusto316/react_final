@@ -7,17 +7,11 @@ import { Todo } from '../interfaces';
 
 
 interface TodosContext {
-  useGetTodos: () => {
-    isLoading: boolean,
-    todos: Array<Todo>,
-    error: string
-  },
-  useCreateTodo: () => {
-    isLoading: boolean,
-    todo: Todo,
-    error: string,
-    createTodo:(todoInput: Todo) => void
-  }
+  isLoading: boolean,
+  todos: Array<Todo>,
+  error: string,
+  createTodo: (todoInput: Todo) => void,
+  deleteTodo: (id: number) => void
 }
 
 const Context = createContext({} as TodosContext);
@@ -28,7 +22,7 @@ export const useTodosContext = () => {
 
 const todosService = TodosService.getInstance();
 
-const useGetTodos = () => {
+export const TodosProvider: FC<{children: ReactNode}> = ({ children }) => {
   const [isLoading, setIsLoading] = useState(true);
   const [todos, setTodos] = useState([] as Array<Todo>);
   const [error, setError] = useState('');
@@ -48,18 +42,6 @@ const useGetTodos = () => {
       });
   }, []);
 
-  const memoizedValues = useMemo(() => {
-    return { isLoading, todos, error };
-  }, [todos, error]);
-
-  return memoizedValues;
-};
-
-const useCreateTodo = () => {
-  const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState('');
-  const [todo, setTodo] = useState({} as Todo);
-
   /**
    *
    * @description requires Auth
@@ -69,8 +51,12 @@ const useCreateTodo = () => {
 
     todosService.create(todoInput)
       .then((todo) => {
-        console.log('New Todo created!');
-        setTodo(todo);
+        console.log('New Todo created!', todo);
+        setTodos((state) => {
+          return [
+            ...state, todo,
+          ];
+        });
       })
       .catch((error: AxiosError) => {
         console.log(error.message);
@@ -81,19 +67,23 @@ const useCreateTodo = () => {
       });
   };
 
+  const deleteTodo = (id: number) => {
+    todosService.remove(id)
+      .then(() => {
+        setTodos((state) => {
+          return state.filter((todo) => todo.id !== id);
+        });
+      })
+      .catch((error) => {
+        console.log(error.message);
+      });
+  };
+
   const memoizedValues = useMemo(() => {
     return {
-      isLoading, todo, error, createTodo,
+      isLoading, todos, error, createTodo, deleteTodo,
     };
-  }, [todo, error]);
-
-  return memoizedValues;
-};
-
-export const TodosProvider: FC<{children: ReactNode}> = ({ children }) => {
-  const memoizedValues = useMemo(() => {
-    return { useGetTodos, useCreateTodo };
-  }, [useGetTodos, useCreateTodo]);
+  }, [todos, error]);
 
 
   return (
