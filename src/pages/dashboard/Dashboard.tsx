@@ -16,7 +16,7 @@ const typewriterList = [
 export const Dashboard: FC = () => {
   return (
     <Section>
-      <div className="hero-section">
+      <header className="hero-section" aria-label="hero-section">
         <div className="hero__content">
           <h3 className="hero__heading">
             <Typewriter
@@ -45,7 +45,7 @@ export const Dashboard: FC = () => {
             alt="hero-astronaut"
           />
         </figure>
-      </div>
+      </header>
     </Section>
   );
 };

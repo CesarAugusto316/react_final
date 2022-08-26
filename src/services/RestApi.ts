@@ -1,25 +1,24 @@
-/* eslint-disable class-methods-use-this */
 import axios, { AxiosRequestConfig, AxiosResponse } from 'axios';
-import { LocalToken } from './LocalToken';
+import { LocalTokenStorage } from './LocalTokenStorage';
 
 
 /**
  *
- * @description BaseClass for services that communicates with API endpoints.
+ * @description BaseClass for services that communicates with Larnu API
  */
 export class RestAPI {
   private baseUrl = import.meta.env.VITE_TODOS_API_URL;
 
   public saveLocalToken(newToken: string) {
-    LocalToken.getInstance().setValue(newToken);
+    LocalTokenStorage.getInstance().setValue(newToken);
   }
 
   public deleteLocalToken() {
-    LocalToken.getInstance().deleteValue();
+    LocalTokenStorage.getInstance().deleteValue();
   }
 
   public getLocalToken() {
-    return LocalToken.getInstance().getValue();
+    return LocalTokenStorage.getInstance().getValue();
   }
 
   private configHeaders(auth = true): AxiosRequestConfig {

@@ -1,16 +1,27 @@
-import { FC } from 'react';
+import { FC, useState, MouseEventHandler } from 'react';
 import '@animxyz/core';
 import { XyzTransitionGroup } from '@animxyz/react';
 import { FaTrashAlt, FaEdit } from 'react-icons/fa';
-import { useTodosContext } from '../../contexts';
-import { Spinner } from '../spinner/Spinner';
+import { useAuthContext, useTodosContext } from '../../contexts';
+import { Modal, LoginForm, Spinner } from '..';
 import './aside.css';
 
 
 export const TodosList: FC = () => {
+  const [toggleEditModal, setToggleEditModal] = useState(false);
+  const [toggleTrashModal, setToggleTrashModal] = useState(false);
+  const { isLogged } = useAuthContext();
   const {
     todos, isLoading, error, deleteTodo,
   } = useTodosContext();
+
+  const closeEditModal: MouseEventHandler = (e) => {
+    if (!((e.target as HTMLElement).closest('.form-login')
+     || (e.target as HTMLElement).closest('.create-todo-form')
+    )) {
+      setToggleEditModal(false);
+    }
+  };
 
 
   if (isLoading) {
@@ -28,6 +39,7 @@ export const TodosList: FC = () => {
       className="todos-list"
     >
       {!todos.length && <p>There are no Todos by now.</p>}
+
       {todos.length && todos.map(({ id, name, description }) => {
         return (
           <div key={id} className="todo">
@@ -37,8 +49,37 @@ export const TodosList: FC = () => {
             </div>
 
             <div className="todo__actions">
-              <FaEdit className="todo__icon" />
-              <FaTrashAlt className="todo__icon" onClick={() => deleteTodo(id)} />
+              <FaEdit className="todo__icon" onClick={() => setToggleEditModal(true)} />
+
+              <FaTrashAlt
+                className="todo__icon"
+                onClick={() => {
+                  if (!isLogged) {
+                    setToggleTrashModal(true);
+                  } else {
+                    deleteTodo(id);
+                  }
+                }}
+              />
+
+              {toggleTrashModal && !isLogged && (
+                <Modal onClick={(e) => {
+                  if (!((e.target as HTMLElement).closest('.form-login')
+                  )) {
+                    setToggleTrashModal(false);
+                  }
+                }}
+                >
+                  <LoginForm />
+                </Modal>
+              )}
+
+              {toggleEditModal && (
+              <Modal onClick={closeEditModal}>
+                {!isLogged && <LoginForm />}
+                {isLogged && <div>Edit Form</div>}
+              </Modal>
+              )}
             </div>
           </div>
         );

@@ -18,7 +18,7 @@
   display: flex;
   position: absolute;
   bottom: -4.5%;
-  animation: wave-move 20s linear alternate-reverse infinite;
+  animation: wave-move 22s linear alternate-reverse infinite;
 }
 
 #layout .wave-bottom svg {

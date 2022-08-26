@@ -6,7 +6,7 @@ import { MdDashboard, MdMail, MdPeopleAlt } from 'react-icons/md';
 import './sidebar.css';
 
 
-const inititalSidebar = () => {
+const inititalSidebar = (): boolean => {
   const toggle = localStorage
     .getItem('sidebar-col');
 
@@ -24,7 +24,11 @@ export const SideBar: FC = () => {
   }, [toggle]);
 
   return (
-    <nav className={`sidebar ${toggle ? 'expand' : ''}`}>
+    <nav
+      role="navigation"
+      aria-label="sidebar navigation"
+      className={`sidebar ${toggle ? 'expand' : ''}`}
+    >
 
       <div className="sidebar__links">
         <figure className="personal-logo">

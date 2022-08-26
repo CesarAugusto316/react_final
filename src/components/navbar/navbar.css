@@ -40,3 +40,9 @@
   transform: scale(1.125);
   color: var(--primary-focus);
 }
+
+.navbar .btn-toggle {
+  display: block;
+  background-color: inherit !important;
+  color: var(--base-content);
+}

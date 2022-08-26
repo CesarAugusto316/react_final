@@ -42,6 +42,7 @@ export class AuthService extends RestAPI {
           resolve(data);
         })
         .catch((error: AxiosError) => {
+          this.deleteLocalToken();
           reject(error);
         });
     });

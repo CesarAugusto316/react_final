@@ -26,7 +26,7 @@ export const Aside: FC = () => {
 
 
   return (
-    <aside className="aside">
+    <aside className="aside" aria-label="todos-list-column">
       <h3 className="todos-list__heading">
         <span className="todos-list__heading--main">ToDos</span>
         <span
@@ -35,14 +35,14 @@ export const Aside: FC = () => {
         >
           crear
         </span>
-      </h3>
 
-      {toggleModal && (
+        {toggleModal && (
         <Modal onClick={closeModal}>
           {!isLogged && <LoginForm />}
           {isLogged && <CreateTodoForm onCloseModal={() => setToggleModal(false)} />}
         </Modal>
-      )}
+        )}
+      </h3>
 
       <TodosList />
     </aside>

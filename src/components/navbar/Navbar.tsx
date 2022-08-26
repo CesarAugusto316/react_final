@@ -9,22 +9,28 @@ export const Navbar: FC = () => {
   const { theme, onToggleTheme } = useThemeContext();
 
   return (
-    <nav className="navbar">
+    <nav className="navbar" role="navigation" aria-label="main navigation">
       <span className="navbar__col-1">
         <h2 className="navbar__heading">
           Welcome to my Portfolio
         </h2>
       </span>
+
       <div className="navbar__col-2">
         <h2 className="navbar__heading">César Rivera</h2>
-        <span className="navbar__icons-box">
+        <span role="button" className="navbar__icons-box">
           <FaLinkedin className="navbar__icon" />
           <FaGithub className="navbar__icon" />
         </span>
-        <span onClick={() => onToggleTheme()}>
+
+        <button
+          className="btn-toggle"
+          aria-pressed={theme === 'light'}
+          onClick={() => onToggleTheme()}
+        >
           {theme === 'light' && <ImSun className="navbar__icon" />}
           {theme === 'dark' && <FaMoon className="navbar__icon" />}
-        </span>
+        </button>
       </div>
     </nav>
   );
