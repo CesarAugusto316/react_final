@@ -11,7 +11,7 @@
   align-items: flex-start;
   grid-column: 1/2;
   grid-row: 1/-1;
-  padding: 2rem;
+  padding: 1.7rem;
   transition: all 0.1s cubic-bezier(0.19, 1, 0.22, 1);
 }
 

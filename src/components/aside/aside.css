@@ -37,7 +37,7 @@
 }
 
 .todos-list::-webkit-scrollbar-button {
-  height: 50px;
+  height: 30px;
 }
 
 .todos-list::-webkit-scrollbar-thumb:hover {

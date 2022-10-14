@@ -5,8 +5,10 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "test": "vitest --run",
+    "test": "vitest",
+    "test:nowatch": "vitest run",
     "coverage": "vitest run --coverage",
+    "lint": "eslint .",
     "build": "tsc && vite build",
     "preview": "vite preview"
   },

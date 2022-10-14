@@ -11,16 +11,27 @@ export const Navbar: FC = () => {
   return (
     <nav className="navbar" role="navigation" aria-label="main navigation">
       <span className="navbar__col-1">
-        <h2 className="navbar__heading">
-          Welcome to my Portfolio
-        </h2>
+        {/* <h2 className="navbar__heading">
+          Hello World
+        </h2> */}
       </span>
 
       <div className="navbar__col-2">
-        <h2 className="navbar__heading">César Rivera</h2>
         <span role="button" className="navbar__icons-box">
-          <FaLinkedin className="navbar__icon" />
-          <FaGithub className="navbar__icon" />
+          <a
+            href="https://www.linkedin.com/in/c%C3%A9sar-rivera316/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FaLinkedin className="navbar__icon" />
+          </a>
+          <a
+            href="https://github.com/CesarAugusto316"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FaGithub className="navbar__icon" />
+          </a>
         </span>
 
         <button

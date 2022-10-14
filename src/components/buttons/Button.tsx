@@ -18,5 +18,5 @@ export const Button: FC<ButtonProps> = ({ children, type, onClick }) => {
 
 Button.defaultProps = {
   type: 'button',
-  onClick(): void {},
+  onClick(): void { },
 };

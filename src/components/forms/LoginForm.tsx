@@ -30,7 +30,6 @@ export const LoginForm: FC = () => {
     isLoading, error, signIn,
   } = useAuthContext();
 
-
   if (isLoading) {
     return <Spinner size="font-6" />;
   }

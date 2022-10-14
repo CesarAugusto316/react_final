@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import { FC } from 'react';
 import Typewriter from 'typewriter-effect';
 import astronaut from '../../assets/astronaut.svg';
@@ -7,8 +8,8 @@ import './dashboard.css';
 const typewriterList = [
   'Hi there everyone',
   "It's me, César!",
-  "I'm a FullStack",
-  'Web Developer',
+  "I'm a Fullstack",
+  'Software Developer',
   'Welcome to',
   'My Portfolio',
 ];
@@ -24,7 +25,7 @@ export const Dashboard: FC = () => {
               onInit={(typewriter) => {
                 typewriterList.forEach((str) => {
                   typewriter.typeString(str)
-                    .pauseFor(100)
+                    .pauseFor(120)
                     .deleteAll()
                     .start();
                 });
@@ -32,9 +33,12 @@ export const Dashboard: FC = () => {
             />
           </h3>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Ipsa excepturi eaque ut laudantium laboriosam mollitia
-            quas nesciunt consequatur eligendi. Nihil magni fugiat
+            My name's César Rivera from Ecuador.
+            I came to Software Development looking for personal growth.
+            But I quickly realized that Software is
+            very challenging and exiting so I created this space
+            where I can share with the world the projects I've made and
+            I'am currently working on.
           </p>
         </div>
 
