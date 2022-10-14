@@ -22,17 +22,17 @@
   --base-300: rgb(27, 30, 40);
   --base-content: rgb(166, 173, 186);
   --base-content-light: rgb(118, 126, 143);
-  --base-shadow: rgba(35, 35, 35, 0.4);
+  --base-shadow: rgba(35, 35, 35, 0.3);
 }
 
 [data-theme="light"] {
-  --base-100: rgb(253, 253, 253);
+  --base-100: rgb(251, 251, 251);
   --base-150: rgb(247, 246, 246);
   --base-200: rgb(235, 235, 235);
   --base-300: rgb(220, 220, 220);
   --base-content: rgb(80, 83, 122);
   --base-content-light: rgb(141, 143, 161);
-  --base-shadow: rgba(160, 164, 173, 0.14);
+  --base-shadow: rgba(160, 164, 173, 0.135);
 }
 
 *,

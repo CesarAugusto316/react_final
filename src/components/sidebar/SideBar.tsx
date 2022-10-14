@@ -37,7 +37,7 @@ export const SideBar: FC = () => {
 
         <NavLink className="sidebar__link" to="/" title="Home">
           <MdDashboard className="sidebar__icon" />
-          {!toggle && <span className="link-text">Dashboard</span>}
+          {!toggle && <span className="link-text">Home</span>}
         </NavLink>
 
         <NavLink className="sidebar__link" to="/my-skills" title="Skills">

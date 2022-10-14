@@ -1,8 +1,8 @@
 .hero-section {
-  /* max-width: 82rem; */
+  max-width: 82rem;
   margin-top: -4rem;
   display: flex;
-  gap: 4rem;
+  gap: 2.6rem;
 }
 
 .hero__content {
@@ -22,8 +22,8 @@
 }
 
 .hero__image-box {
-  max-width: 36rem;
-  height: 36rem;
+  max-width: 35.6rem;
+  height: 35.6rem;
   display: flex;
   align-items: center;
 }
