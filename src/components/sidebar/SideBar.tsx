@@ -50,9 +50,9 @@ export const SideBar: FC = () => {
           {!toggle && <span className="link-text">Projects</span>}
         </NavLink>
 
-        <NavLink className="sidebar__link" to="/references" title="References">
+        <NavLink className="sidebar__link" to="/references" title="about">
           <MdPeopleAlt className="sidebar__icon" />
-          {!toggle && <span className="link-text">References</span>}
+          {!toggle && <span className="link-text">About</span>}
         </NavLink>
 
         <NavLink className="sidebar__link" to="/contact" title="Contacts">

@@ -5,21 +5,16 @@
   background-color: var(--base-100);
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;
   grid-column: 2/-1;
   padding: 0 3rem;
 }
 
-.navbar__col-2 {
+.navbar__buttons {
   gap: 3.2rem;
   display: flex;
   align-items: center;
   justify-content: flex-end;
-}
-
-.navbar__heading {
-  font-weight: 500;
-  font-size: 2rem;
 }
 
 .navbar__icons-box {

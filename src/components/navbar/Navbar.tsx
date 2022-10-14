@@ -10,13 +10,7 @@ export const Navbar: FC = () => {
 
   return (
     <nav className="navbar" role="navigation" aria-label="main navigation">
-      <span className="navbar__col-1">
-        {/* <h2 className="navbar__heading">
-          Hello World
-        </h2> */}
-      </span>
-
-      <div className="navbar__col-2">
+      <div className="navbar__buttons">
         <span role="button" className="navbar__icons-box">
           <a
             href="https://www.linkedin.com/in/c%C3%A9sar-rivera316/"
