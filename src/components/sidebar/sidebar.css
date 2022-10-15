@@ -3,7 +3,7 @@
   width: 15.8rem;
   height: 100%;
   background-color: var(--base-100);
-  border-right: 1px solid var(--base-shadow);
+  border-right: 0.2px solid var(--base-shadow);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -25,7 +25,7 @@
 }
 
 .active {
-  color: var(--primary-focus) !important;
+  color: var(--primary) !important;
 }
 
 .sidebar__links {

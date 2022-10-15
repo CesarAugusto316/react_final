@@ -18,7 +18,7 @@ export const Aside: FC = () => {
 
   const closeModal: MouseEventHandler = (e) => {
     if (!((e.target as HTMLElement).closest('.form-login')
-     || (e.target as HTMLElement).closest('.create-todo-form')
+      || (e.target as HTMLElement).closest('.create-todo-form')
     )) {
       setToggleModal(false);
     }
@@ -28,19 +28,19 @@ export const Aside: FC = () => {
   return (
     <aside className="aside" aria-label="todos-list-column">
       <h3 className="todos-list__heading">
-        <span className="todos-list__heading--main">ToDos</span>
+        <span className="todos-list__heading--main">My ToDos</span>
         <span
           className="todos-list__heading--subtitle"
           onClick={openModal}
         >
-          crear
+          create
         </span>
 
         {toggleModal && (
-        <Modal onClick={closeModal}>
-          {!isLogged && <LoginForm />}
-          {isLogged && <CreateTodoForm onCloseModal={() => setToggleModal(false)} />}
-        </Modal>
+          <Modal onClick={closeModal}>
+            {!isLogged && <LoginForm />}
+            {isLogged && <CreateTodoForm onCloseModal={() => setToggleModal(false)} />}
+          </Modal>
         )}
       </h3>
 

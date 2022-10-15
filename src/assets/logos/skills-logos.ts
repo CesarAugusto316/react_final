@@ -46,12 +46,12 @@ export const skillsLogos: Skill[] = [
     alt: 'mongo',
   },
   {
-    img: nest,
-    alt: 'nest',
-  },
-  {
     img: node,
     alt: 'node',
+  },
+  {
+    img: nest,
+    alt: 'nest',
   },
   {
     img: postgres,

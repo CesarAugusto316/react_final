@@ -13,7 +13,7 @@
 }
 
 .hero__heading {
-  color: var(--primary-focus);
+  color: var(--primary);
   font-family: var(--font-family);
   font-size: 3.3rem;
   letter-spacing: -0.2px;

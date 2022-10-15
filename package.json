@@ -15,12 +15,14 @@
   "dependencies": {
     "@animxyz/core": "^0.6.6",
     "@animxyz/react": "^0.6.7",
+    "@types/react-show-more-text": "^1.4.2",
     "axios": "^0.27.2",
     "formik": "^2.2.9",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.4.0",
     "react-router-dom": "^6.3.0",
+    "react-show-more-text": "^1.6.2",
     "react-toastify": "^9.0.8",
     "typewriter-effect": "^2.19.0",
     "yup": "^0.32.11"

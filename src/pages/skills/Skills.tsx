@@ -9,7 +9,7 @@ export const Skills: FC = () => {
   return (
     <Section>
       <div className="skills-section">
-        <h3 className="heading-primary">My skills and Tools</h3>
+        <h3 className="heading-primary">Some of my skills and Tools</h3>
         <div className="skills-wrapper">
           <div className="skills-container">
             {skillsLogos.map(({ img, alt }, i) => {

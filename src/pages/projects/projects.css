@@ -1,9 +1,82 @@
-.project-card {
+.projects-section {
+  max-width: 74rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3.4rem;
+  min-height: 54rem;
+  margin-top: 1rem;
+}
+
+.cards-row {
+  gap: 4rem;
+  display: flex;
+  align-items: flex-start;
+}
+
+.card {
   background-color: var(--base-100);
-  height: 35rem;
-  border-radius: 1rem;
-  box-shadow: 0px 0px 12px var(--base-shadow);
+  width: 50%;
+  border-radius: 0.8rem;
+  box-shadow: 0px 0px 8px var(--base-shadow);
   padding: 2rem;
   z-index: 10;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.card__image-container {
+  width: 100%;
+  overflow: hidden;
+}
+
+.card__image {
+  width: 100%;
+  height: 20rem;
+  border-radius: 0.8rem;
+  border: 1px solid var(--base-shadow);
+}
+
+.card__title {
+  font-size: 1.7rem;
+  text-transform: capitalize;
+  margin-top: -0.6rem;
+  margin-bottom: 0.3rem;
+}
+
+.card__description {
+  font-size: 1.45rem;
+  line-height: 2rem;
+  min-height: 4rem;
+}
+
+.card__buttons-box {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card__button {
+  cursor: pointer;
+  font-size: 1.4rem;
+  font-weight: 700;
+  text-transform: capitalize;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  padding: 0.8rem 1.6rem;
+  border-radius: 0.8rem;
+  border: 1.5px solid var(--base-shadow);
+  box-shadow: 1px 1px 8px var(--base-shadow);
+  background-color: var(--base-150);
+  color: var(--neutral-content);
+}
+
+.card__button:hover {
+  color: var(--primary);
+}
+
+.card__icon {
+  font-size: 1.6rem;
 }

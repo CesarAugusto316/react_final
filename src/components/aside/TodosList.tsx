@@ -17,7 +17,7 @@ export const TodosList: FC = () => {
 
   const closeEditModal: MouseEventHandler = (e) => {
     if (!((e.target as HTMLElement).closest('.form-login')
-     || (e.target as HTMLElement).closest('.create-todo-form')
+      || (e.target as HTMLElement).closest('.create-todo-form')
     )) {
       setToggleEditModal(false);
     }
@@ -44,7 +44,7 @@ export const TodosList: FC = () => {
         return (
           <div key={id} className="todo">
             <div className="todo__content">
-              <h5>{name}</h5>
+              <h5 className="todo__title">{name}</h5>
               <p>{description}</p>
             </div>
 
@@ -75,10 +75,10 @@ export const TodosList: FC = () => {
               )}
 
               {toggleEditModal && (
-              <Modal onClick={closeEditModal}>
-                {!isLogged && <LoginForm />}
-                {isLogged && <div>Edit Form</div>}
-              </Modal>
+                <Modal onClick={closeEditModal}>
+                  {!isLogged && <LoginForm />}
+                  {isLogged && <div>Edit Form</div>}
+                </Modal>
               )}
             </div>
           </div>

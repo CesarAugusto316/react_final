@@ -15,19 +15,23 @@ interface Project {
   githubRepo: string
 }
 
+/**
+ *
+ * @description we should a maximum number of characters when implementigng a DB.
+ */
 export const projects: Project[] = [
   {
     url: 'http://react-crud-mocha.vercel.app/',
     img: todo,
     title: 'Full-stack React CRUD',
-    description: 'TODOAPP CRUD Authentication using JWT with React and Typescript, vanilla css for styling, dark-theme, using a Spinner when transitioning between components.',
+    description: 'TodoApp CRUD Authentication using JWT with React and Typescript, vanilla css for styling, dark-theme, using a Spinner when transitioning between components.',
     githubRepo: 'https://github.com/CesarAugusto316/react_crud',
   },
   {
     url: 'http://ecommerce-next-sanity-sigma.vercel.app/',
     img: ecommerce,
     title: 'Full-stack Ecommerce application',
-    description: 'application with Payments functionality. With Modern design, animations,',
+    description: 'Application with Payments functionality. With Modern design and animations.',
     githubRepo: 'https://github.com/CesarAugusto316/ecommerce-next-sanity',
   },
   {
@@ -41,7 +45,7 @@ export const projects: Project[] = [
     url: 'http://api-weather-js-gamma.vercel.app/',
     img: weatherApp,
     title: 'weather app',
-    description: 'I use model view controller pattern to design this project with leaflet library',
+    description: 'I used model view controller pattern to design this project with leaflet library just by usign OOP techinques and pure javascript.',
     githubRepo: 'https://github.com/CesarAugusto316/api_weather_js',
   },
   {
@@ -69,7 +73,7 @@ export const projects: Project[] = [
     url: 'https://cesaraugusto316.github.io/hipotecariosec.github.io/',
     img: hipotecarios,
     title: 'Hipotecarios Ecuador website',
-    description: 'A Real State website for realtors, made iwth html, css and javascript',
+    description: 'A Real State website for realtors, made with html, css, bootstrap and javascript.',
     githubRepo: 'https://github.com/CesarAugusto316/hipotecariosec.github.io',
   },
 ];

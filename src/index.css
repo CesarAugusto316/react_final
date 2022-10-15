@@ -4,22 +4,22 @@
   font-size: 62.5%;
   box-sizing: border-box;
   --font-family: "Poppins", sans-serif;
-  --primary: rgb(100, 108, 255);
-  --primary-focus: rgb(73, 80, 219);
+  --primary: rgb(97, 104, 245);
+  --primary-focus: rgb(67, 75, 217);
   --primary-content: rgb(29, 30, 61);
   --secondary: rgba(97, 218, 251, 0.714);
   --secondary-focus: rgba(79, 165, 189, 0.871);
   --accent: rgb(219, 39, 119);
-  --neutral: rgb(48, 48, 53);
-  --neutral-content: rgb(148, 152, 203);
-  --primary-shadow: rgba(100, 108, 255, 0.388);
+  --neutral: rgb(45, 45, 56);
+  --neutral-content: rgb(83, 88, 162);
+  --primary-shadow: rgba(100, 108, 255, 0.333);
 }
 
 [data-theme="dark"] {
-  --base-100: rgb(42, 48, 60);
-  --base-150: rgb(36, 41, 51);
+  --base-100: rgb(29, 32, 42);
+  --base-150: rgb(33, 38, 48);
   --base-200: rgb(31, 36, 45);
-  --base-300: rgb(27, 30, 40);
+  --base-300: rgb(42, 48, 60);
   --base-content: rgb(166, 173, 186);
   --base-content-light: rgb(118, 126, 143);
   --base-shadow: rgba(35, 35, 35, 0.3);
@@ -30,9 +30,9 @@
   --base-150: rgb(247, 246, 246);
   --base-200: rgb(235, 235, 235);
   --base-300: rgb(220, 220, 220);
-  --base-content: rgb(80, 83, 122);
+  --base-content: rgb(65, 67, 98);
   --base-content-light: rgb(141, 143, 161);
-  --base-shadow: rgba(160, 164, 173, 0.135);
+  --base-shadow: rgba(160, 164, 173, 0.15);
 }
 
 *,
