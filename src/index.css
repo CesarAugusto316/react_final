@@ -72,6 +72,12 @@ a {
   text-decoration: none;
 }
 
+.heading-primary {
+  text-align: center;
+  font-size: 3.6rem;
+  font-weight: 600;
+}
+
 *:focus {
   outline: none;
 }

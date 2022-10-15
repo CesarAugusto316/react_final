@@ -34,7 +34,7 @@ export const Dashboard: FC = () => {
           </h3>
           <p>
             My name's César Rivera from Ecuador.
-            I came to Software Development looking for personal growth.
+            I came into Software Development looking for personal growth.
             But I quickly realized that Software is
             very challenging and exiting so I created this space
             where I can share with the world the projects I've made and
