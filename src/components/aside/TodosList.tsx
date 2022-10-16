@@ -1,5 +1,4 @@
 import { FC, useState, MouseEventHandler } from 'react';
-import '@animxyz/core';
 import { XyzTransitionGroup } from '@animxyz/react';
 import { FaTrashAlt, FaEdit } from 'react-icons/fa';
 import { useAuthContext, useTodosContext } from '../../contexts';
@@ -23,7 +22,6 @@ export const TodosList: FC = () => {
     }
   };
 
-
   if (isLoading) {
     return (
       <Spinner size="font-5" />
@@ -35,7 +33,7 @@ export const TodosList: FC = () => {
   return (
     <XyzTransitionGroup
       appearVisible
-      xyz="fade big up appear-stagger ease-in-out-back delay-5"
+      xyz="fade big up appear-stagger-4 ease-in-out-back delay-5"
       className="todos-list"
     >
       {!todos.length && <p>There are no Todos by now.</p>}

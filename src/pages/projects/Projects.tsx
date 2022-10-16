@@ -7,10 +7,6 @@ import './projects.css';
 
 
 export const Projects: FC = () => {
-  // useEffect(() => {
-  //   console.log(projects);
-  // }, []);
-
   return (
     <Section>
       <div className="projects-section">
