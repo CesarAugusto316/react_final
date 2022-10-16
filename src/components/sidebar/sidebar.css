@@ -11,7 +11,7 @@
   grid-column: 1/2;
   grid-row: 1/-1;
   padding: 1.6rem;
-  transition: all 0.1s cubic-bezier(0.19, 1, 0.22, 1);
+  transition: all 0.05s linear;
 }
 
 .personal-logo {
@@ -45,7 +45,6 @@
   height: 3rem;
   gap: 1.6rem;
   font-weight: 400;
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .sidebar__link:hover {
@@ -63,7 +62,6 @@
   font-size: 2.4rem;
   line-height: 0;
   font-weight: 700;
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .sidebar__expand-icon:hover {

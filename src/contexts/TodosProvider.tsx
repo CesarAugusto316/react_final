@@ -22,7 +22,7 @@ export const useTodosContext = () => {
 
 const todosService = TodosService.getInstance();
 
-export const TodosProvider: FC<{children: ReactNode}> = ({ children }) => {
+export const TodosProvider: FC<{ children: ReactNode }> = ({ children }) => {
   const [isLoading, setIsLoading] = useState(true);
   const [todos, setTodos] = useState([] as Array<Todo>);
   const [error, setError] = useState('');
