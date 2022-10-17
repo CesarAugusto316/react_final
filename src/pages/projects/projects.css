@@ -72,7 +72,7 @@
   padding: 2rem;
   display: flex;
   flex-direction: column;
-  gap: 2.2rem;
+  gap: 2rem;
 }
 
 .card__image-container {
@@ -90,7 +90,7 @@
 .card__title {
   font-size: 1.72rem;
   text-transform: capitalize;
-  margin-top: -1.4rem;
+  margin-top: -1rem;
   margin-bottom: 0.2rem;
 }
 

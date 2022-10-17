@@ -105,7 +105,7 @@ export const Projects = () => {
                   title={projects[(currTab * 2)].title}
                   rel="noopener noreferrer"
                 >
-                  <img className="card__image" src={projects[(currTab * 2)].img} alt={projects[(currTab * 2)].title} />
+                  <img className="card__image" src={projects[(currTab * 2)].img} alt={projects[(currTab * 2)].title} draggable={false} loading="lazy" />
                 </a>
                 <div className="card__body">
                   <h4 className="card__title">{projects[(currTab * 2)].title}</h4>
@@ -141,7 +141,7 @@ export const Projects = () => {
                   title={projects[(currTab * 2) + 1].title}
                   rel="noopener noreferrer"
                 >
-                  <img className="card__image" src={projects[(currTab * 2) + 1].img} alt={projects[(currTab * 2) + 1].title} />
+                  <img className="card__image" src={projects[(currTab * 2) + 1].img} alt={projects[(currTab * 2) + 1].title} draggable={false} loading="lazy" />
                 </a>
                 <div className="card__body">
                   <h4 className="card__title">{projects[(currTab * 2) + 1].title}</h4>

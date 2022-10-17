@@ -44,6 +44,7 @@ export const Dashboard: FC = () => {
 
         <figure className="hero__image-box bounce-bottom">
           <img
+            draggable={false}
             src={astronaut}
             className="hero__image fade-in-bottom"
             alt="hero-astronaut"

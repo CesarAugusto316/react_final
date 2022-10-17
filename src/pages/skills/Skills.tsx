@@ -15,7 +15,7 @@ export const Skills: FC = () => {
             {skillsLogos.map(({ img, alt }, i) => {
               return (
                 <span className="skills__image-container" key={i}>
-                  <img className="skills__image" src={img} alt={alt} />
+                  <img className="skills__image" src={img} alt={alt} draggable={false} loading="lazy" />
                 </span>
               );
             })}

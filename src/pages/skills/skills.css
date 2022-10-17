@@ -1,8 +1,8 @@
 .skills-section {
-  margin-top: -4rem;
+  margin-top: -5rem;
   display: flex;
   flex-direction: column;
-  gap: 5.8rem;
+  gap: 5.2rem;
   position: relative;
   z-index: 10;
 }
