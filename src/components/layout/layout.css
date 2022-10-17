@@ -10,6 +10,11 @@
   display: grid;
   grid-template-columns: auto 1fr auto;
   grid-template-rows: auto 1fr;
+  background-image: var(--base-gradient),
+    url("../../assets/white-galaxy-1.jpeg");
+  background-size: cover;
+  background-position: top;
+  position: relative;
 }
 
 #layout .wave-bottom {

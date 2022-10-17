@@ -73,6 +73,7 @@
   padding: 1.6rem;
   border-radius: 1rem;
   box-shadow: 0px 0px 10px 1px var(--base-shadow);
+  border: 1px solid var(--primary-shadow);
   display: flex;
   flex-direction: column;
   gap: 1rem;

@@ -1,4 +1,3 @@
-// @ts-nocheck
 /* eslint-disable no-plusplus */
 import { useState, useRef } from 'react';
 import { XyzTransition, xyz } from '@animxyz/react';

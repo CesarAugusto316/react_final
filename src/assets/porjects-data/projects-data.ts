@@ -5,6 +5,7 @@ import restCountries from './rest-countries.png';
 import hipotecarios from './hipotecarios-ecuador.png';
 import weatherApp from './weather-app.png';
 import dockerTodoApp from './docker-todo-app.png';
+import calculator from './Frontend Mentor _ Calculator app.png';
 import backend from './backend.png';
 
 
@@ -38,7 +39,7 @@ export const projects: Project[] = [
   {
     url: 'http://youtube-clone-lac-sigma.vercel.app/',
     img: youtube,
-    title: 'Youtube clone Project',
+    title: 'Youtube clone Front-end',
     description: 'Authentication using JWT with React and Typescript. Styled Components for styling, dark-theme, using LocalStorage',
     githubRepo: 'https://github.com/CesarAugusto316/youtube-clone',
   },
@@ -76,5 +77,19 @@ export const projects: Project[] = [
     title: 'Rest Countries Challenge',
     description: 'Displays all the countries in the world by usin the rest countries API and React',
     githubRepo: 'https://github.com/CesarAugusto316/rest-countries-api-challenge',
+  },
+  {
+    url: 'https://youtube-clone-api.onrender.com/',
+    img: backend,
+    title: 'Youtube clone Backend-end',
+    description: 'Authentication using JWT, users can upload videos, subscribe to channels and mauch more',
+    githubRepo: 'https://github.com/CesarAugusto316/youtube-clone-backend',
+  },
+  {
+    url: 'https://cesaraugusto316.github.io/JavascriptCalculator-frontEndMasters/',
+    img: calculator,
+    title: 'JavaScript Calculator',
+    description: 'This was my very firt Challenge from frontendMentors.io, this was the beginning of my JavaScript adventure',
+    githubRepo: 'https://github.com/CesarAugusto316/JavascriptCalculator-frontEndMasters',
   },
 ];
