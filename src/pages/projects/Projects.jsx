@@ -1,3 +1,4 @@
+// @ts-nocheck
 /* eslint-disable no-plusplus */
 import { useState, useRef } from 'react';
 import { XyzTransition, xyz } from '@animxyz/react';
@@ -38,7 +39,7 @@ export const Projects = () => {
    *
    * @param {number} index
    */
-  const clickAnyNumber = (index: number) => {
+  const clickAnyNumber = (index) => {
     if (index > currTab) {
       tabDirection.current = 'out-left-50% in-right-50%';
     } else {
