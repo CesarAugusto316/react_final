@@ -38,7 +38,7 @@ export const Projects = () => {
    *
    * @param {number} index
    */
-  const clickAnyNumber = (index) => {
+  const clickAnyNumber = (index: number) => {
     if (index > currTab) {
       tabDirection.current = 'out-left-50% in-right-50%';
     } else {
