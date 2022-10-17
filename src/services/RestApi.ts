@@ -7,7 +7,7 @@ import { LocalTokenStorage } from './LocalTokenStorage';
  * @description BaseClass for services that communicates with Larnu API
  */
 export class RestAPI {
-  private baseUrl = import.meta.env.VITE_TODOS_API_URL;
+  private baseUrl = 'https://ms-discord-upy5mhs63a-rj.a.run.app';
 
   public saveLocalToken(newToken: string) {
     LocalTokenStorage.getInstance().setValue(newToken);

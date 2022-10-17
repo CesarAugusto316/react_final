@@ -5,6 +5,7 @@ import restCountries from './rest-countries.png';
 import hipotecarios from './hipotecarios-ecuador.png';
 import weatherApp from './weather-app.png';
 import dockerTodoApp from './docker-todo-app.png';
+import backend from './backend.png';
 
 
 interface Project {
@@ -30,7 +31,7 @@ export const projects: Project[] = [
   {
     url: 'http://ecommerce-next-sanity-sigma.vercel.app/',
     img: ecommerce,
-    title: 'Full-stack Ecommerce application',
+    title: 'Full-stack Ecommerce App',
     description: 'Application with Payments functionality. With Modern design and animations.',
     githubRepo: 'https://github.com/CesarAugusto316/ecommerce-next-sanity',
   },
@@ -50,8 +51,8 @@ export const projects: Project[] = [
   },
   {
     url: 'https://express-migrations.onrender.com/api/v1/',
-    img: undefined,
-    title: 'Rest Api with authentication and ci/cd pipeline',
+    img: backend,
+    title: 'Rest Api with authentication.',
     description: 'Express, node, jest testing, supertest, github actions ci/cd postgres, sequelize and much more.',
     githubRepo: 'https://github.com/CesarAugusto316/express_migrate',
   },
@@ -63,17 +64,17 @@ export const projects: Project[] = [
     githubRepo: 'https://github.com/CesarAugusto316/docker_first_project',
   },
   {
-    url: 'https://cesaraugusto316.github.io/rest-countries-api-challenge/',
-    img: restCountries,
-    title: 'Rest Countries Challenge',
-    description: 'Displays all the countries in the world by usin the rest countries API and React',
-    githubRepo: 'https://github.com/CesarAugusto316/rest-countries-api-challenge',
-  },
-  {
     url: 'https://cesaraugusto316.github.io/hipotecariosec.github.io/',
     img: hipotecarios,
     title: 'Hipotecarios Ecuador website',
     description: 'A Real State website for realtors, made with html, css, bootstrap and javascript.',
     githubRepo: 'https://github.com/CesarAugusto316/hipotecariosec.github.io',
+  },
+  {
+    url: 'https://cesaraugusto316.github.io/rest-countries-api-challenge/',
+    img: restCountries,
+    title: 'Rest Countries Challenge',
+    description: 'Displays all the countries in the world by usin the rest countries API and React',
+    githubRepo: 'https://github.com/CesarAugusto316/rest-countries-api-challenge',
   },
 ];

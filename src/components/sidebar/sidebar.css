@@ -45,15 +45,17 @@
   height: 3rem;
   gap: 1.6rem;
   font-weight: 400;
-}
-
-.sidebar__link:hover {
-  transform: scale(1.065);
+  transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .sidebar__icon {
   font-size: 2rem;
   font-weight: 400;
+}
+
+.sidebar__link:hover {
+  color: var(--primary);
+  transform: scale(1.065);
 }
 
 .sidebar__expand-icon {

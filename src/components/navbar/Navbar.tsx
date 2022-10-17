@@ -16,6 +16,7 @@ export const Navbar: FC = () => {
             href="https://www.linkedin.com/in/c%C3%A9sar-rivera316/"
             target="_blank"
             rel="noopener noreferrer"
+            className="navbar__link"
           >
             <FaLinkedin className="navbar__icon" />
           </a>
@@ -23,6 +24,7 @@ export const Navbar: FC = () => {
             href="https://github.com/CesarAugusto316"
             target="_blank"
             rel="noopener noreferrer"
+            className="navbar__link"
           >
             <FaGithub className="navbar__icon" />
           </a>

@@ -12,7 +12,7 @@
   --accent: rgb(219, 39, 119);
   --neutral: rgb(45, 45, 56);
   --neutral-content: rgb(83, 88, 162);
-  --primary-shadow: rgba(100, 108, 255, 0.333);
+  --primary-shadow: rgba(100, 108, 255, 0.2);
 }
 
 [data-theme="dark"] {

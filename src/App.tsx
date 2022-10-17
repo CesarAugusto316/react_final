@@ -25,7 +25,7 @@ export const App: FC = () => {
             <Navbar />
             <XyzTransition
               appear
-              xyz="fade in-down-25% out-up-25% duration-4 ease-out"
+              xyz="fade small-5 in-down-25% out-up-25% duration-4 ease-out"
               mode="out-in"
             >
               <div key={location.key}>

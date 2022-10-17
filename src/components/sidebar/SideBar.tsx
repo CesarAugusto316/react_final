@@ -45,6 +45,9 @@ export const SideBar: FC = () => {
         </NavLink>
       </div>
 
+      {/*
+      TODO: everyTime we click on a tab this icon should sparkle
+       */}
       <span
         onClick={() => setToggle()}
         className="btn--sidebar__toggle"

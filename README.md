@@ -14,4 +14,5 @@ React Final Project
 <br>
 npm install & npm run dev
 
-![plot](./src/assets/chrome-capture-2022-7-9.gif)
+![plot](./src/assets/app.gif)
+![plot](./src/assets/projects.gif)

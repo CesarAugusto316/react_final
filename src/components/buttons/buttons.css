@@ -8,14 +8,15 @@
   font-size: 1.5rem;
   text-transform: uppercase;
   font-weight: 800;
-  color: var(--neutral-content);
+  color: var(--primary);
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   box-shadow: 0px 0px 14px var(--base-shadow);
+  border: 1px solid var(--primary-shadow);
 }
 
 .btn:hover {
   transform: scale(1.075) translateY(-2px);
-  color: var(--primary);
+  color: var(--primary-focus);
 }
 
 .btn:active {

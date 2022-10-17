@@ -23,6 +23,12 @@
   gap: 1rem;
 }
 
+.navbar__link:link,
+.navbar__link:visited,
+.navbar__link:active {
+  color: var(--base-content);
+}
+
 .navbar__icon {
   cursor: pointer;
   font-size: 2.2rem;
