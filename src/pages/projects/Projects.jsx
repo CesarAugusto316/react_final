@@ -48,130 +48,128 @@ export const Projects = () => {
   };
 
   return (
-    <Section>
-      <div className="projects-section">
-        <h3 className="heading-primary">My Projects</h3>
+    <div className="projects-section">
+      <h3 className="heading-primary">My Projects</h3>
 
-        {/* tabs_buttons  */}
-        <div className="tabs-wrapper">
-          <div className="tab-btns-box">
-            <button
-              className="tab__button"
-              onClick={() => decrement()}
-              disabled={currTab === 0}
-            >
-              <FaAngleDoubleLeft className="tab__icon" />
-            </button>
-            {
-              [...Array.from(Array(Math.floor(projects.length / 2))).keys()].map((index) => {
-                return (
-                  <span
-                    className={`${index === currTab ? 'active-tab' : 'deactive-tab'} tab__number`}
-                    key={`index-${index}`}
-                    onClick={() => clickAnyNumber(index)}
-                  >
-                    {index + 1}
-                  </span>
-                );
-              })
-            }
-            <button
-              className="tab__button"
-              onClick={() => increment()}
-              disabled={currTab === (Math.floor(projects.length / 2) - 1)}
-            >
-              <FaAngleDoubleRight className="tab__icon" />
-            </button>
-          </div>
-        </div>
-
-        {/* cards_projects */}
-        <div
-          style={{ overflow: 'hidden' }}
-          xyz={xyz(
-            'fade ease-in-out duration-4',
-            tabDirection.current,
-          )}
-        >
-          <XyzTransition appear className="cards-row">
-            <div
-              key={`index-${currTab}`}
-            >
-              <div className="card xyz-out-absolute">
-                <a
-                  className="card__image-container"
-                  href={projects[(currTab * 2)].url}
-                  target="_blank"
-                  title={projects[(currTab * 2)].title}
-                  rel="noopener noreferrer"
+      {/* tabs_buttons  */}
+      <div className="tabs-wrapper">
+        <div className="tab-btns-box">
+          <button
+            className="tab__button"
+            onClick={() => decrement()}
+            disabled={currTab === 0}
+          >
+            <FaAngleDoubleLeft className="tab__icon" />
+          </button>
+          {
+            [...Array.from(Array(Math.floor(projects.length / 2))).keys()].map((index) => {
+              return (
+                <span
+                  className={`${index === currTab ? 'active-tab' : 'deactive-tab'} tab__number`}
+                  key={`index-${index}`}
+                  onClick={() => clickAnyNumber(index)}
                 >
-                  <img className="card__image" src={projects[(currTab * 2)].img} alt={projects[(currTab * 2)].title} draggable={false} loading="lazy" />
-                </a>
-                <div className="card__body">
-                  <h4 className="card__title">{projects[(currTab * 2)].title}</h4>
-                  <ShowMoreText
-                    lines={2}
-                    more={<b>more</b>}
-                    less={<b>less</b>}
-                    className="card__description"
-                    expanded={false}
-                    truncatedEndingComponent="... "
-                  >
-                    {projects[(currTab * 2)].description}
-                  </ShowMoreText>
-                </div>
-                <div className="card__buttons-box">
-                  <a href={projects[(currTab * 2)].url} className="card__button" target="_blank" rel="noopener noreferrer">
-                    <span>view deploy</span>
-                    <FaRocket className="card__icon" />
-                  </a>
-
-                  <a href={projects[(currTab * 2)].githubRepo} className="card__button" target="_blank" rel="noopener noreferrer">
-                    <span>view code</span>
-                    <FaGithub className="card__icon" />
-                  </a>
-                </div>
-              </div>
-
-              <div className="card xyz-out-absolute">
-                <a
-                  className="card__image-container"
-                  href={projects[(currTab * 2) + 1].url}
-                  target="_blank"
-                  title={projects[(currTab * 2) + 1].title}
-                  rel="noopener noreferrer"
-                >
-                  <img className="card__image" src={projects[(currTab * 2) + 1].img} alt={projects[(currTab * 2) + 1].title} draggable={false} loading="lazy" />
-                </a>
-                <div className="card__body">
-                  <h4 className="card__title">{projects[(currTab * 2) + 1].title}</h4>
-                  <ShowMoreText
-                    lines={2}
-                    more={<b>more</b>}
-                    less={<b>less</b>}
-                    className="card__description"
-                    expanded={false}
-                    truncatedEndingComponent="... "
-                  >
-                    {projects[(currTab * 2) + 1].description}
-                  </ShowMoreText>
-                </div>
-                <div className="card__buttons-box">
-                  <a href={projects[(currTab * 2) + 1].url} className="card__button" target="_blank" rel="noopener noreferrer">
-                    <span>view deploy</span>
-                    <FaRocket className="card__icon" />
-                  </a>
-
-                  <a href={projects[(currTab * 2) + 1].githubRepo} className="card__button" target="_blank" rel="noopener noreferrer">
-                    <span>view code</span>
-                    <FaGithub className="card__icon" />
-                  </a>
-                </div>
-              </div>
-            </div>
-          </XyzTransition>
+                  {index + 1}
+                </span>
+              );
+            })
+          }
+          <button
+            className="tab__button"
+            onClick={() => increment()}
+            disabled={currTab === (Math.floor(projects.length / 2) - 1)}
+          >
+            <FaAngleDoubleRight className="tab__icon" />
+          </button>
         </div>
       </div>
-    </Section>
+
+      {/* cards_projects */}
+      <div
+        style={{ overflow: 'hidden' }}
+        xyz={xyz(
+          'fade ease-in-out duration-4',
+          tabDirection.current,
+        )}
+      >
+        <XyzTransition appear className="cards-row">
+          <div
+            key={`index-${currTab}`}
+          >
+            <div className="card xyz-out-absolute">
+              <a
+                className="card__image-container"
+                href={projects[(currTab * 2)].url}
+                target="_blank"
+                title={projects[(currTab * 2)].title}
+                rel="noopener noreferrer"
+              >
+                <img className="card__image" src={projects[(currTab * 2)].img} alt={projects[(currTab * 2)].title} draggable={false} loading="lazy" />
+              </a>
+              <div className="card__body">
+                <h4 className="card__title">{projects[(currTab * 2)].title}</h4>
+                <ShowMoreText
+                  lines={2}
+                  more={<b>more</b>}
+                  less={<b>less</b>}
+                  className="card__description"
+                  expanded={false}
+                  truncatedEndingComponent="... "
+                >
+                  {projects[(currTab * 2)].description}
+                </ShowMoreText>
+              </div>
+              <div className="card__buttons-box">
+                <a href={projects[(currTab * 2)].url} className="card__button" target="_blank" rel="noopener noreferrer">
+                  <span>view deploy</span>
+                  <FaRocket className="card__icon" />
+                </a>
+
+                <a href={projects[(currTab * 2)].githubRepo} className="card__button" target="_blank" rel="noopener noreferrer">
+                  <span>view code</span>
+                  <FaGithub className="card__icon" />
+                </a>
+              </div>
+            </div>
+
+            <div className="card xyz-out-absolute">
+              <a
+                className="card__image-container"
+                href={projects[(currTab * 2) + 1].url}
+                target="_blank"
+                title={projects[(currTab * 2) + 1].title}
+                rel="noopener noreferrer"
+              >
+                <img className="card__image" src={projects[(currTab * 2) + 1].img} alt={projects[(currTab * 2) + 1].title} draggable={false} loading="lazy" />
+              </a>
+              <div className="card__body">
+                <h4 className="card__title">{projects[(currTab * 2) + 1].title}</h4>
+                <ShowMoreText
+                  lines={2}
+                  more={<b>more</b>}
+                  less={<b>less</b>}
+                  className="card__description"
+                  expanded={false}
+                  truncatedEndingComponent="... "
+                >
+                  {projects[(currTab * 2) + 1].description}
+                </ShowMoreText>
+              </div>
+              <div className="card__buttons-box">
+                <a href={projects[(currTab * 2) + 1].url} className="card__button" target="_blank" rel="noopener noreferrer">
+                  <span>view deploy</span>
+                  <FaRocket className="card__icon" />
+                </a>
+
+                <a href={projects[(currTab * 2) + 1].githubRepo} className="card__button" target="_blank" rel="noopener noreferrer">
+                  <span>view code</span>
+                  <FaGithub className="card__icon" />
+                </a>
+              </div>
+            </div>
+          </div>
+        </XyzTransition>
+      </div>
+    </div>
   );
 };
