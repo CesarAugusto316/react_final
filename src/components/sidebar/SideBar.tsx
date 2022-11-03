@@ -1,4 +1,4 @@
-import { FC, useReducer } from 'react';
+import { FC, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { BsBoxArrowRight, BsBoxArrowLeft } from 'react-icons/bs';
 import { FaLaptopCode, FaTools } from 'react-icons/fa';
@@ -7,9 +7,12 @@ import './sidebar.css';
 
 
 export const SideBar: FC = () => {
-  const [toggle, setToggle] = useReducer(((state) => !state), true);
+  const [toggle, setToggle] = useState(true);
+
   return (
     <nav
+      onMouseEnter={() => setToggle(false)}
+      onMouseLeave={() => setToggle(true)}
       role="navigation"
       aria-label="sidebar navigation"
       className={`sidebar ${toggle ? 'expand' : ''}`}
@@ -49,7 +52,6 @@ export const SideBar: FC = () => {
       TODO: everyTime we click on a tab this icon should sparkle
        */}
       <span
-        onClick={() => setToggle()}
         className="btn--sidebar__toggle"
       >
         {!toggle && <BsBoxArrowLeft className="sidebar__expand-icon" title="shrink" />}

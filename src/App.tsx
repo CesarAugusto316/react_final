@@ -19,7 +19,6 @@ export const App: FC = () => {
     <AuthProvider>
       <TodosProvider>
         <ThemeProvider>
-
           <Layout>
             <SideBar />
             <Navbar />
@@ -27,6 +26,7 @@ export const App: FC = () => {
               appear
               xyz="fade small-5 in-down-25% out-up-25% duration-4 ease-out"
               mode="out-in"
+              className="pages-container"
             >
               <div key={location.key}>
                 <Routes location={location}>
@@ -40,7 +40,6 @@ export const App: FC = () => {
             </XyzTransition>
             <Aside />
           </Layout>
-
         </ThemeProvider>
       </TodosProvider>
     </AuthProvider>

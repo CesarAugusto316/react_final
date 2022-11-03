@@ -92,6 +92,12 @@ a {
   outline: none;
 }
 
+.pages-container {
+  width: 100;
+  height: 100%;
+  grid-column: 1/2;
+}
+
 @media screen and (max-width: 900px) {
   :root {
     font-size: 59%;

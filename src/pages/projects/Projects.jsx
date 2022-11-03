@@ -53,8 +53,8 @@ export const Projects = () => {
         <h3 className="heading-primary">My Projects</h3>
 
         {/* tabs_buttons  */}
-        <div className="tab-btns-box">
-          <div>
+        <div className="tabs-wrapper">
+          <div className="tab-btns-box">
             <button
               className="tab__button"
               onClick={() => decrement()}
@@ -67,7 +67,7 @@ export const Projects = () => {
                 return (
                   <span
                     className={`${index === currTab ? 'active-tab' : 'deactive-tab'} tab__number`}
-                    key={index}
+                    key={`index-${index}`}
                     onClick={() => clickAnyNumber(index)}
                   >
                     {index + 1}

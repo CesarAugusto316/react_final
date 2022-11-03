@@ -24,7 +24,6 @@ export const Aside: FC = () => {
     }
   };
 
-
   return (
     <aside className="aside" aria-label="todos-list-column">
       <h3 className="todos-list__heading">
