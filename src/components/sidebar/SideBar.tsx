@@ -1,12 +1,45 @@
 import { FC, useState } from 'react';
+import { useMediaQuery } from 'react-responsive';
 import { NavLink } from 'react-router-dom';
 import { BsBoxArrowRight, BsBoxArrowLeft } from 'react-icons/bs';
-import { FaLaptopCode, FaTools } from 'react-icons/fa';
-import { MdDashboard, MdMail, MdPeopleAlt } from 'react-icons/md';
+import { FaLaptopCode, FaTools, FaHome } from 'react-icons/fa';
+import { MdMail, MdPeopleAlt } from 'react-icons/md';
 import './sidebar.css';
 
 
-export const SideBar: FC = () => {
+const Mobile: FC = () => {
+  return (
+    <nav
+      role="navigation"
+      aria-label="sidebar navigation"
+      className="sidebar"
+    >
+      <div className="sidebar__links">
+        <NavLink className="sidebar__link" to="/" title="Home">
+          <FaHome className="sidebar__icon" />
+        </NavLink>
+
+        <NavLink className="sidebar__link" to="/my-skills" title="Skills">
+          <FaTools className="sidebar__icon" />
+        </NavLink>
+
+        <NavLink className="sidebar__link" to="/projects" title="Projects">
+          <FaLaptopCode className="sidebar__icon" />
+        </NavLink>
+
+        <NavLink className="sidebar__link" to="/references" title="about">
+          <MdPeopleAlt className="sidebar__icon" />
+        </NavLink>
+
+        <NavLink className="sidebar__link" to="/contact" title="Contacts">
+          <MdMail className="sidebar__icon" />
+        </NavLink>
+      </div>
+    </nav>
+  );
+};
+
+const Desktop: FC = () => {
   const [toggle, setToggle] = useState(true);
 
   return (
@@ -23,7 +56,7 @@ export const SideBar: FC = () => {
         </figure>
 
         <NavLink className="sidebar__link" to="/" title="Home">
-          <MdDashboard className="sidebar__icon" />
+          <FaHome className="sidebar__icon" />
           {!toggle && <span className="link-text">Home</span>}
         </NavLink>
 
@@ -47,10 +80,6 @@ export const SideBar: FC = () => {
           {!toggle && <span className="link-text">Contacts</span>}
         </NavLink>
       </div>
-
-      {/*
-      TODO: everyTime we click on a tab this icon should sparkle
-       */}
       <span
         className="btn--sidebar__toggle"
       >
@@ -59,4 +88,13 @@ export const SideBar: FC = () => {
       </span>
     </nav>
   );
+};
+
+export const SideBar: FC = () => {
+  const isTabOrMobile = useMediaQuery({ query: '(max-width: 600px)' });
+
+  if (isTabOrMobile) {
+    return <Mobile />;
+  }
+  return <Desktop />;
 };
