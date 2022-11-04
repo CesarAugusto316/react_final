@@ -1,4 +1,5 @@
 import { FC } from 'react';
+import { useMediaQuery } from 'react-responsive';
 import { FaLinkedin, FaGithub, FaMoon } from 'react-icons/fa';
 import { ImSun } from 'react-icons/im';
 import { useThemeContext } from '../../contexts';
@@ -7,9 +8,16 @@ import './navbar.css';
 
 export const Navbar: FC = () => {
   const { theme, onToggleTheme } = useThemeContext();
+  const isTabOrMobile = useMediaQuery({ query: '(max-width: 600px)' });
 
   return (
     <nav className="navbar" role="navigation" aria-label="main navigation">
+      {isTabOrMobile && (
+        <figure className="personal-logo">
+          CR
+        </figure>
+      )}
+
       <div className="navbar__buttons">
         <span role="button" className="navbar__icons-box">
           <a

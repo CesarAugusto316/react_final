@@ -11,6 +11,7 @@ export default defineConfig({
     environment: 'jsdom',
     setupFiles: './tests-setup.ts',
     reporters: 'verbose',
+    dir: './src/__tests__',
     watch: true,
   },
   plugins: [react()],

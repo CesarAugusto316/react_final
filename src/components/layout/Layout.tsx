@@ -2,7 +2,7 @@ import { FC, ReactNode } from 'react';
 import './layout.css';
 
 
-export const Layout: FC<{children: ReactNode}> = ({ children }) => {
+export const Layout: FC<{ children: ReactNode }> = ({ children }) => {
   return (
     <div id="layout">
       {children}
