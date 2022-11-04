@@ -33,7 +33,7 @@ const hasLocalToken = (): boolean => {
  *
  * @TODO: hasToken should get its value from localStorage.
  */
-export const AuthProvider: FC<{children: ReactNode}> = ({ children }) => {
+export const AuthProvider: FC<{ children: ReactNode }> = ({ children }) => {
   const [isLoading, setIsloading] = useState(false);
   const [hasToken, setHasToken] = useState<boolean>(hasLocalToken());
   const [isLogged, setIsLogged] = useState(false);

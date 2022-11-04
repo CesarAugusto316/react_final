@@ -6,7 +6,7 @@
   z-index: 20;
   height: 100%;
   background-color: var(--base-100);
-  border-right: 0.2px solid var(--base-shadow);
+  border-right: 0.1px solid var(--base-shadow);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -51,7 +51,7 @@
 
 .link-text {
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  width: 7.4rem;
+  width: 10.4rem;
 }
 
 .sidebar__icon {
