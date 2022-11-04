@@ -20,23 +20,21 @@ const validationSchema = Yup.object({
 
 export const ContactForm: FC = () => {
   return (
-    <Section>
-      <Formik
-        initialValues={initialValues}
-        validationSchema={validationSchema}
-        onSubmit={(values, { setSubmitting, resetForm }) => {
-          console.log(values);
-          resetForm();
-          setSubmitting(false);
-        }}
-      >
-        <Form className="form-contact">
-          <h2 className="form-contact__heading">Contact Form</h2>
-          <MyInput placeholder="Name" type="text" name="name" />
-          <MyInput placeholder="Email" type="email" name="email" />
-          <button className="btn" type="submit">Submit</button>
-        </Form>
-      </Formik>
-    </Section>
+    <Formik
+      initialValues={initialValues}
+      validationSchema={validationSchema}
+      onSubmit={(values, { setSubmitting, resetForm }) => {
+        console.log(values);
+        resetForm();
+        setSubmitting(false);
+      }}
+    >
+      <Form className="form-contact">
+        <h2 className="form-contact__heading">Contact Form</h2>
+        <MyInput placeholder="Name" type="text" name="name" />
+        <MyInput placeholder="Email" type="email" name="email" />
+        <button className="btn" type="submit">Submit</button>
+      </Form>
+    </Formik>
   );
 };

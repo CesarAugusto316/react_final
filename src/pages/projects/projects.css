@@ -1,18 +1,14 @@
 .projects-section {
-  max-width: 74rem;
+  flex: 0 1 74rem;
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 1.4rem;
   min-height: 56rem;
   margin-top: 1rem;
 }
 
 .tab-btns-box {
-  width: 74rem;
-  margin-top: -2.8rem;
-}
-
-.tab-btns-box div {
+  justify-self: flex-start;
   display: flex;
   width: 14.6rem;
   align-items: center;
@@ -58,6 +54,8 @@
 
 .cards-row {
   gap: 4rem;
+  width: 100%;
+  height: 100%;
   display: flex;
   align-items: flex-start;
   position: relative;
@@ -72,17 +70,18 @@
   padding: 2rem;
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 2.1rem;
 }
 
 .card__image-container {
+  display: block;
   width: 100%;
   overflow: hidden;
 }
 
 .card__image {
   width: 100%;
-  height: 20.2rem;
+  height: 21.2rem;
   border-radius: 0.8rem;
   border: 1px solid var(--base-shadow);
 }
@@ -90,8 +89,8 @@
 .card__title {
   font-size: 1.72rem;
   text-transform: capitalize;
-  margin-top: -1rem;
-  margin-bottom: 0.2rem;
+  margin-top: -0.4rem;
+  margin-bottom: 1rem;
 }
 
 .card__description {
@@ -130,4 +129,45 @@
 
 .card__icon {
   font-size: 1.6rem;
+}
+
+@media screen and (max-width: 1090px) {
+  .projects-section {
+    gap: 4rem;
+  }
+
+  .single__slider {
+    position: relative;
+    max-width: 36rem;
+    margin: 0 auto;
+  }
+
+  .cards-row {
+    width: inherit;
+    display: block;
+  }
+
+  .card {
+    width: 36rem;
+    align-items: stretch !important;
+  }
+
+  .tab__button {
+    position: absolute;
+    z-index: 10;
+    top: 50%;
+    transform: translate(0, -50%);
+  }
+
+  .tab__icon {
+    font-size: 3.6rem;
+  }
+
+  .arrow--right {
+    right: -3.8rem;
+  }
+
+  .arrow--left {
+    left: -3.8rem;
+  }
 }

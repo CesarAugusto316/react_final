@@ -19,7 +19,6 @@ export const App: FC = () => {
     <AuthProvider>
       <TodosProvider>
         <ThemeProvider>
-
           <Layout>
             <SideBar />
             <Navbar />
@@ -28,7 +27,7 @@ export const App: FC = () => {
               xyz="fade small-5 in-down-25% out-up-25% duration-4 ease-out"
               mode="out-in"
             >
-              <div key={location.key}>
+              <div key={location.key} className="section">
                 <Routes location={location}>
                   <Route path="/" element={<Dashboard />} />
                   <Route path="/my-skills" element={<Skills />} />
@@ -40,7 +39,6 @@ export const App: FC = () => {
             </XyzTransition>
             <Aside />
           </Layout>
-
         </ThemeProvider>
       </TodosProvider>
     </AuthProvider>

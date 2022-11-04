@@ -23,18 +23,18 @@ interface Project {
  */
 export const projects: Project[] = [
   {
-    url: 'http://react-crud-mocha.vercel.app/',
-    img: todo,
-    title: 'Full-stack React CRUD',
-    description: 'TodoApp CRUD Authentication using JWT with React and Typescript, vanilla css for styling, dark-theme, using a Spinner when transitioning between components.',
-    githubRepo: 'https://github.com/CesarAugusto316/react_crud',
-  },
-  {
     url: 'http://ecommerce-next-sanity-sigma.vercel.app/',
     img: ecommerce,
     title: 'Full-stack Ecommerce App',
     description: 'Application with Payments functionality. With Modern design and animations.',
     githubRepo: 'https://github.com/CesarAugusto316/ecommerce-next-sanity',
+  },
+  {
+    url: 'http://react-crud-mocha.vercel.app/',
+    img: todo,
+    title: 'Full-stack React CRUD',
+    description: 'TodoApp CRUD Authentication using JWT with React and Typescript, vanilla css for styling, dark-theme, using a Spinner when transitioning between components.',
+    githubRepo: 'https://github.com/CesarAugusto316/react_crud',
   },
   {
     url: 'http://youtube-clone-lac-sigma.vercel.app/',
