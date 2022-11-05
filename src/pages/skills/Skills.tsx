@@ -7,7 +7,7 @@ import './skills.css';
 
 export const Skills: FC = () => {
   return (
-    <div className="skills-section">
+    <div id="skills" className="skills-section">
       <h3 className="heading-primary">Some of my skills and Tools</h3>
       <div className="skills-wrapper">
         <div className="skills-container">
