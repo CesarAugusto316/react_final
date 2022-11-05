@@ -51,7 +51,7 @@
 }
 
 .todos-list__heading--main {
-  font-size: 2.68rem;
+  font-size: 2.5rem;
 }
 
 .todos-list__heading--subtitle {
@@ -74,7 +74,7 @@
   border: 1px solid var(--primary-shadow);
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 1.6rem;
 }
 
 .todo__content {
@@ -119,5 +119,9 @@
 
   .todos-list {
     overflow: initial;
+  }
+
+  .todos-list__heading--main {
+    font-size: 2.6rem;
   }
 }

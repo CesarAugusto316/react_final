@@ -16,7 +16,7 @@ const typewriterList = [
 
 export const Dashboard: FC = () => {
   return (
-    <header className="hero-section" aria-label="hero-section">
+    <header id="home" className="hero-section" aria-label="hero-section">
       <div className="hero__content">
         <h3 className="hero__heading">
           <Typewriter

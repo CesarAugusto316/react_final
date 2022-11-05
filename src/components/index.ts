@@ -10,3 +10,4 @@ export { CreateTodoForm } from './forms/CreateTodoForm';
 export { MyInput } from './forms/MyInput';
 export { Button } from './buttons/Button';
 export { TodosList } from './aside/TodosList';
+export { ScrollToTop } from './scrollToTop/ScrollToTop';
