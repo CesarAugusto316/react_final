@@ -1,5 +1,8 @@
-import { FC, useState } from 'react';
+import {
+  FC, useEffect, useState, useRef,
+} from 'react';
 import { useMediaQuery } from 'react-responsive';
+import { useScrollDirection } from 'react-use-scroll-direction';
 import { NavLink } from 'react-router-dom';
 import { BsBoxArrowRight, BsBoxArrowLeft } from 'react-icons/bs';
 import { FaLaptopCode, FaTools, FaHome } from 'react-icons/fa';
@@ -8,11 +11,23 @@ import './sidebar.css';
 
 
 const Mobile: FC = () => {
+  const { isScrollingDown, isScrollingUp } = useScrollDirection();
+  const toggleOnScroll = useRef<boolean>(false);
+
+  useEffect(() => {
+    if (isScrollingDown) {
+      toggleOnScroll.current = true;
+    }
+    if (isScrollingUp) {
+      toggleOnScroll.current = false;
+    }
+  }, [isScrollingDown, isScrollingUp]);
+
   return (
     <nav
       role="navigation"
       aria-label="sidebar navigation"
-      className="sidebar"
+      className={`${toggleOnScroll.current && 'fade-in'} sidebar`}
     >
       <div className="sidebar__links">
         <NavLink className="sidebar__link" to="/" title="Home">

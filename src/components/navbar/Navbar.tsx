@@ -1,5 +1,6 @@
-import { FC } from 'react';
+import { FC, useEffect, useRef } from 'react';
 import { useMediaQuery } from 'react-responsive';
+import { useScrollDirection } from 'react-use-scroll-direction';
 import { FaLinkedin, FaGithub, FaMoon } from 'react-icons/fa';
 import { ImSun } from 'react-icons/im';
 import { useThemeContext } from '../../contexts';
@@ -9,9 +10,20 @@ import './navbar.css';
 export const Navbar: FC = () => {
   const { theme, onToggleTheme } = useThemeContext();
   const isTabOrMobile = useMediaQuery({ query: '(max-width: 600px)' });
+  const { isScrollingDown, isScrollingUp } = useScrollDirection();
+  const toggleOnScroll = useRef<boolean>(false);
+
+  useEffect(() => {
+    if (isScrollingDown) {
+      toggleOnScroll.current = true;
+    }
+    if (isScrollingUp) {
+      toggleOnScroll.current = false;
+    }
+  }, [isScrollingDown, isScrollingUp]);
 
   return (
-    <nav className="navbar" role="navigation" aria-label="main navigation">
+    <nav className={`${toggleOnScroll.current && isTabOrMobile && 'fade-in'} navbar`} role="navigation" aria-label="main navigation">
       {isTabOrMobile && (
         <figure className="personal-logo">
           CR

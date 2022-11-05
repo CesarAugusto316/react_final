@@ -36,8 +36,7 @@ export const Dashboard: FC = () => {
           I came into Software Development looking for personal growth.
           But I quickly realized that Software is
           very challenging and exiting so I created this space
-          where I can share with the world the projects I've made and
-          I'am currently working on.
+          where I can share with the world the projects I'am currently working on.
         </p>
       </div>
 

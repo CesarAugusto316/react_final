@@ -171,3 +171,9 @@
     left: -3.8rem;
   }
 }
+
+@media screen and (max-width: 375px) {
+  .card {
+    width: 32rem;
+  }
+}
